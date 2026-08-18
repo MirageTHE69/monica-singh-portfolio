@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     home: document.getElementById('view-home'),
     wedding: document.getElementById('view-wedding'),
     sangeet: document.getElementById('view-sangeet'),
+    corporate: document.getElementById('view-corporate'),
     about: document.getElementById('view-about'),
     contact: document.getElementById('view-contact')
   };
