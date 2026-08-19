@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FAF7F2; }
+  a { color: #7A2331; text-decoration: none; }
+  a:hover { color: #5c1a25; }
+  ::selection { background: #F0C9C0; }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+</helmet>
+
+<div style="font-family: 'Jost', sans-serif; color: #1C1712; background: #FAF7F2; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(250,247,242,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #EAE3D8;">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Home.dc.html" style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; color: #1C1712; white-space: nowrap;">Monica Singh</a>
+      <nav style="display: flex; gap: 26px; align-items: center; white-space: nowrap;">
+        <a href="Home.dc.html#collage" style="{{ navLinkStyle }}">About</a>
+        <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position: relative;">
+          <a href="Home.dc.html#services" style="{{ navLinkStyle }} display: inline-flex; align-items: center; gap: 7px;">Services <span style="{{ caretStyle }}">&#9662;</span></a>
+          <div style="{{ dropdownStyle }}">
+            <div style="background: #FAF7F2; border: 1px solid #EAE3D8; border-radius: 16px; padding: 10px; box-shadow: 0 22px 48px rgba(28,23,18,0.16);">
+              <sc-for list="{{ serviceMenu }}" as="m" hint-placeholder-count="4">
+                <a href="{{ m.href }}" style="display: block; padding: 13px 20px; font-size: 14px; color: #1C1712; border-radius: 10px; text-transform: none; letter-spacing: 0;" style-hover="background:#EAE3D8;">{{ m.label }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <a href="Home.dc.html#action" style="{{ navLinkStyle }}">Showreel</a>
+        <a href="Home.dc.html#gallery" style="{{ navLinkStyle }}">Gallery</a>
+        <a href="Home.dc.html#testimonials" style="{{ navLinkStyle }}">Reviews</a>
+      </nav>
+      <a href="#contact" style="background: #7A2331; color: #FAF7F2; padding: 13px 28px; border-radius: 999px; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500; white-space: nowrap;" style-hover="background:#5c1a25;">Enquire</a>
+    </div>
+  </header>
+
+  <section style="position: relative; background: #1C1712;">
+    <img src="assets/sangeet-green.jpg" alt="Monica Singh hosting a wedding sangeet in Ahmedabad" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45;"/>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(28,23,18,0.92) 0%, rgba(28,23,18,0.6) 55%, rgba(28,23,18,0.35) 100%);"></div>
+    <div style="position: relative; max-width: 1340px; margin: 0 auto; padding: 150px 40px 130px;">
+      <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #F0C9C0; margin-bottom: 24px;">Wedding Anchoring &middot; Ahmedabad</div>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 5.6vw, 84px); font-weight: 600; line-height: 1.02; letter-spacing: -1.5px; color: #FAF7F2; margin: 0 0 28px; max-width: 900px;">Sangeet anchor who keeps <em style="font-style: italic; color: #F0C9C0;">the floor moving</em></h1>
+      <p style="font-size: 18px; line-height: 1.8; color: #cfc6bd; max-width: 560px; margin: 0 0 40px;">Fifteen family performances, a live DJ, surprise entries and a room full of relatives. Monica runs the whole evening from a rehearsed script so nothing drags and nothing collides.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#contact" style="display: inline-block; background: #7A2331; color: #FAF7F2; padding: 18px 36px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#F0C9C0;color:#1C1712;">Check availability</a>
+        <a href="#included" style="display: inline-block; border: 1px solid #cfc6bd; color: #FAF7F2; padding: 18px 36px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#FAF7F2;color:#1C1712;">What's included</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom: 1px solid #EAE3D8;">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 56px 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px; text-align: center;">
+      <sc-for list="{{ quickFacts }}" as="f" hint-placeholder-count="4">
+        <div>
+          <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 44px; line-height: 1; color: #7A2331;">{{ f.value }}</div>
+          <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6B6058; margin-top: 10px;">{{ f.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1340px; margin: 0 auto; padding: 110px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 80px; align-items: center;">
+    <div>
+      <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 20px;">Why it matters</div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; line-height: 1.15; margin: 0 0 26px;">A sangeet runs on timing more than anything else.</h2>
+      <p style="font-size: 17px; line-height: 1.85; color: #6B6058; margin: 0 0 20px;">Ten to fifteen family performances, a live band or DJ, surprise entries, and a room full of relatives who all want a turn on the mic. Without someone actively running the evening, it either drags or turns into chaos.</p>
+      <p style="font-size: 17px; line-height: 1.85; color: #6B6058; margin: 0;">Monica has hosted sangeets across Ahmedabad and greater Gujarat for over a decade, working from a run-of-show built with the family in advance, in Hindi, English or Gujarati as the crowd needs.</p>
+    </div>
+    <div style="position: relative; height: 520px;">
+      <div style="position: absolute; top: 0; right: 0; width: 68%; height: 84%; border-radius: 220px 220px 20px 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(28,23,18,0.2);">
+        <img src="assets/kia-closeup.jpg" alt="Monica Singh hosting on stage with a microphone" style="width: 100%; height: 100%; object-fit: cover;"/>
+      </div>
+      <div style="position: absolute; bottom: 0; left: 0; width: 50%; height: 46%; border-radius: 20px; overflow: hidden; border: 8px solid #FAF7F2; box-shadow: 0 24px 48px rgba(28,23,18,0.22);">
+        <img src="assets/corporate-crowd.jpg" alt="Monica Singh working the crowd at an event" style="width: 100%; height: 100%; object-fit: cover;"/>
+      </div>
+      <div style="position: absolute; top: 28px; left: -8px; background: #7A2331; color: #FAF7F2; border-radius: 20px; padding: 22px 26px; max-width: 170px; box-shadow: 0 20px 40px rgba(122,35,49,0.32); animation: floatY 6s ease-in-out infinite;">
+        <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 34px; line-height: 1; margin-bottom: 6px;">15</div>
+        <div style="font-size: 12px; line-height: 1.4; color: #F0C9C0;">Performances cued in one evening</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #1C1712; padding: 110px 40px;">
+    <div style="max-width: 1340px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #F0C9C0; margin-bottom: 18px;">How the evening runs</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #FAF7F2; margin: 0;">From first call to last performance</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <div style="border-top: 2px solid #7A2331; padding-top: 26px;">
+            <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 30px; color: #7A2331; margin-bottom: 14px;">{{ st.num }}</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 25px; font-weight: 600; color: #FAF7F2; margin-bottom: 12px;">{{ st.title }}</div>
+            <p style="font-size: 15px; line-height: 1.75; color: #a89e94; margin: 0;">{{ st.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="included" style="max-width: 1340px; margin: 0 auto; padding: 110px 40px;">
+    <div style="display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr); gap: 80px; align-items: start;">
+      <div style="position: sticky; top: 120px;">
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 20px;">The package</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; line-height: 1.15; margin: 0 0 24px;">What's included</h2>
+        <p style="font-size: 17px; line-height: 1.85; color: #6B6058; margin: 0 0 30px;">Every sangeet booking covers the planning, the script and the night itself. Quotes are shared once the date and scale are confirmed.</p>
+        <a href="#contact" style="display: inline-block; background: #7A2331; color: #FAF7F2; padding: 17px 34px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#5c1a25;">Request a quote</a>
+      </div>
+      <div>
+        <sc-for list="{{ inclusions }}" as="item" hint-placeholder-count="5">
+          <div style="display: grid; grid-template-columns: 34px 1fr; gap: 18px; align-items: start; padding: 26px 0; border-bottom: 1px solid #EAE3D8;">
+            <div style="width: 34px; height: 34px; border-radius: 50%; background: #EAE3D8; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #7A2331; font-weight: 500;">{{ item.n }}</div>
+            <div>
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; margin-bottom: 8px;">{{ item.title }}</div>
+              <div style="font-size: 15px; color: #6B6058; line-height: 1.75;">{{ item.desc }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #EAE3D8; padding: 110px 40px;">
+    <div style="max-width: 1340px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">Gallery</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; margin: 0;">Real sangeets, real families</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 200px; gap: 20px;">
+        <img src="assets/sangeet-green.jpg" alt="Monica hosting a wedding function outdoors" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+        <img src="assets/kia-closeup.jpg" alt="Monica Singh speaking on stage with a microphone" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+        <img src="assets/corporate-crowd.jpg" alt="Monica Singh working the crowd at an event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+        <img src="assets/epoxy-stage.jpg" alt="Monica Singh hosting a large event on stage" style="grid-column: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 110px 40px; text-align: center;">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 90px; font-weight: 600; color: #EAE3D8; line-height: 0.6; margin-bottom: 30px;">&ldquo;</div>
+    <p style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-style: italic; line-height: 1.5; margin: 0 0 28px;">Monica kept our sangeet on schedule and the energy never dropped. Every family performance landed exactly on cue.</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+      <img src="assets/sangeet-green.jpg" alt="Kavita Patel" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;"/>
+      <div style="text-align: left;">
+        <div style="font-weight: 500; font-size: 15px;">Kavita Patel</div>
+        <div style="font-size: 13px; color: #6B6058;">Sangeet, Ahmedabad</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 900px; margin: 0 auto; padding: 0 40px 110px;">
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; margin: 0 0 40px; text-align: center;">Frequently asked</h2>
+    <div>
+      <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="4">
+        <div style="border-bottom: 1px solid #EAE3D8; padding: 24px 0; cursor: pointer;" onClick="{{ toggleFaq }}" data-index="{{ $index }}">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 18px; font-weight: 500;">
+            {{ faq.q }}
+            <span style="color: #7A2331; font-size: 22px; line-height: 1;">{{ faq.symbol }}</span>
+          </div>
+          <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size: 16px; color: #6B6058; line-height: 1.8; margin: 14px 0 0; max-width: 700px;">{{ faq.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contact" style="background: #7A2331; padding: 130px 40px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: rgba(240,201,192,0.16);"></div>
+    <div style="position: absolute; bottom: -110px; right: -70px; width: 340px; height: 340px; border-radius: 50%; background: rgba(240,201,192,0.12);"></div>
+    <div style="max-width: 760px; margin: 0 auto; text-align: center; position: relative;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: #FAF7F2; margin: 0 0 24px;">Booking a sangeet?</h2>
+      <p style="font-size: 17px; color: #F0C9C0; margin: 0 0 40px;">Share your date and city, and Monica will come back with availability and a quote.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:hello@monicasingh.com" style="display: inline-block; background: #FAF7F2; color: #7A2331; padding: 19px 42px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#F0C9C0;">Check availability</a>
+        <a href="https://wa.me/910000000000" style="display: inline-block; border: 1px solid #F0C9C0; color: #FAF7F2; padding: 19px 42px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#F0C9C0;color:#7A2331;">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: 60px 40px 40px; max-width: 1340px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 1px solid #EAE3D8;">
+    <a href="Home.dc.html" style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #1C1712;">Monica Singh</a>
+    <div style="font-size: 13px; color: #6B6058;">Ahmedabad, Gujarat &middot; &copy; 2026 Monica Singh</div>
+  </footer>
+
+  <a href="https://wa.me/910000000000" style="position: fixed; bottom: 28px; right: 28px; background: #7A2331; color: #FAF7F2; padding: 15px 26px; border-radius: 999px; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500; box-shadow: 0 12px 30px rgba(122,35,49,0.35); z-index: 50;" style-hover="background:#5c1a25;">WhatsApp</a>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+    faqs: [
+      { q: 'How far in advance should we book?', a: 'Ideally 2-3 months before the wedding date, especially for peak season (Oct-Feb) weekends.', open: false },
+      { q: 'Do you host in Hindi, English and Gujarati?', a: 'Yes, hosting switches naturally between all three depending on the crowd.', open: false },
+      { q: 'Can you coordinate with our choreographer and DJ?', a: 'Yes, a run-through call with the choreographer and DJ happens before the event to lock cues and transitions.', open: false },
+      { q: 'Do you host outside Ahmedabad?', a: 'Yes, across Gujarat including Vadodara, Surat and Rajkot.', open: false },
+    ],
+  };
+
+  serviceMenu = [
+    { label: 'Sangeet Hosting', href: 'Sangeet Hosting.dc.html' },
+    { label: 'Wedding Anchoring', href: 'Sangeet Hosting.dc.html' },
+    { label: 'Corporate Events', href: 'Home.dc.html#services' },
+    { label: 'Special Occasions', href: 'Home.dc.html#services' },
+  ];
+
+  quickFacts = [
+    { value: '10+', label: 'Years hosting' },
+    { value: '300+', label: 'Events hosted' },
+    { value: '3', label: 'Languages' },
+    { value: '4', label: 'Cities covered' },
+  ];
+
+  steps = [
+    { num: '01', title: 'Planning call', desc: 'A call with the family to map performances, entries and the moments that matter most.' },
+    { num: '02', title: 'Run-of-show', desc: 'A timed written script shared with the DJ, choreographer and venue team ahead of the night.' },
+    { num: '03', title: 'Rehearsal cues', desc: 'A run-through so entries, handovers and transitions are timed rather than improvised.' },
+    { num: '04', title: 'The evening', desc: 'Live hosting start to finish, adjusting pace in real time as the room shifts.' },
+  ];
+
+  inclusions = [
+    { n: '01', title: 'Pre-event planning call', desc: 'A call with the family to map performances, entries and special moments.' },
+    { n: '02', title: 'Written run-of-show', desc: 'A timed script shared with the DJ, choreographer and venue team in advance.' },
+    { n: '03', title: 'Live hosting, start to finish', desc: 'From welcome to final performance, including improvised crowd moments.' },
+    { n: '04', title: 'Coordination with vendors', desc: 'Direct cueing with DJ, lighting and choreography teams on the night.' },
+    { n: '05', title: 'Trilingual hosting', desc: 'Hindi, English and Gujarati, mixed as the room needs.' },
+  ];
+
+  openMenu = () => this.setState({ menuOpen: true });
+  closeMenu = () => this.setState({ menuOpen: false });
+
+  toggleFaq = (e) => {
+    const idx = Number(e.currentTarget.getAttribute('data-index'));
+    this.setState((s) => ({ faqs: s.faqs.map((f, i) => (i === idx ? { ...f, open: !f.open } : f)) }));
+  };
+
+  renderVals() {
+    return {
+      navLinkStyle: { fontSize: '13px', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: 500, color: '#1C1712' },
+      serviceMenu: this.serviceMenu,
+      openMenu: this.openMenu,
+      closeMenu: this.closeMenu,
+      caretStyle: {
+        fontSize: '9px', display: 'inline-block',
+        transform: this.state.menuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        transition: 'transform 0.25s ease',
+      },
+      dropdownStyle: {
+        position: 'absolute', top: '100%', left: '-14px', paddingTop: '14px', minWidth: '220px',
+        opacity: this.state.menuOpen ? 1 : 0,
+        visibility: this.state.menuOpen ? 'visible' : 'hidden',
+        transform: this.state.menuOpen ? 'translateY(0)' : 'translateY(-6px)',
+        transition: 'opacity 0.25s ease, transform 0.25s ease, visibility 0.25s',
+      },
+      quickFacts: this.quickFacts,
+      steps: this.steps,
+      inclusions: this.inclusions,
+      faqs: this.state.faqs.map((f) => ({ ...f, symbol: f.open ? '\u2212' : '+' })),
+      toggleFaq: this.toggleFaq,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,892 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wedding &amp; Corporate Anchor in Ahmedabad | Monica Singh</title>
-  <meta name="description" content="Book Monica Singh, a warm and confident wedding and corporate anchor in Ahmedabad. 10+ years hosting sangeets, award nights and launches across Gujarat." />
-  <meta property="og:title" content="Wedding &amp; Corporate Anchor in Ahmedabad | Monica Singh" />
-  <meta property="og:description" content="Sangeets, receptions, award nights and brand launches, hosted in Hindi, English and Gujarati across Gujarat." />
-  <meta property="og:type" content="website" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monica Singh — Wedding &amp; Corporate Anchor in Ahmedabad</title>
+  <meta name="description" content="Monica Singh hosts weddings, product launches and award nights across Gujarat — in Hindi, English and Gujarati, with a run-of-show rehearsed down to the cue.">
+  <meta property="og:title" content="Monica Singh — Wedding &amp; Corporate Anchor in Ahmedabad">
+  <meta property="og:description" content="From sangeet floors to corporate stages. 10+ years hosting 300+ events across Gujarat and beyond.">
+  <meta property="og:type" content="website">
 
-  <!-- Schema.org LocalBusiness JSON-LD -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Monica Singh — Anchor & Emcee",
-    "description": "Wedding and corporate anchor based in Ahmedabad, hosting sangeets, receptions, award nights and brand launches across Gujarat.",
+    "name": "Monica Singh — Emcee & Anchor",
+    "description": "Professional wedding and corporate event anchor based in Ahmedabad, hosting sangeets, award nights, product launches and milestone events across Gujarat.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ahmedabad",
       "addressRegion": "Gujarat",
       "addressCountry": "IN"
     },
-    "areaServed": ["Ahmedabad", "Gujarat", "India"],
-    "telephone": "+91-XXXXX-XXXXX",
-    "email": "hello@monicasingh.in",
     "knowsLanguage": ["Hindi", "English", "Gujarati"],
-    "priceRange": "₹₹"
+    "email": "hello@monicasingh.com"
   }
   </script>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Sticky Header -->
   <header class="site-header" id="site-header">
-    <div class="site-logo" data-navigate="home" id="nav-logo">Monica Singh</div>
-    <div class="header-right">
-      <div class="header-quote-btn" data-navigate="contact" id="nav-quote-btn">Get a quote</div>
-      <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Open Navigation Menu">
-        <span class="menu-toggle-bar"></span>
-        <span class="menu-toggle-bar"></span>
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" id="header-logo">Monica Singh</a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="#collage" class="nav-link">About</a>
+        
+        <!-- Services Dropdown -->
+        <div class="nav-dropdown-trigger">
+          <a href="#services" class="nav-link" style="display: inline-flex; align-items: center;">
+            Services
+            <svg class="dropdown-arrow-icon" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-card">
+              <a href="sangeet-hosting.html" class="dropdown-item">Sangeet Hosting</a>
+              <a href="sangeet-hosting.html" class="dropdown-item">Wedding Anchoring</a>
+              <a href="#services" class="dropdown-item">Corporate Events</a>
+              <a href="#services" class="dropdown-item">Special Occasions</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#action" class="nav-link">Showreel</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#testimonials" class="nav-link">Reviews</a>
+        <a href="#availability" class="nav-link">Availability</a>
+      </nav>
+
+      <a href="#contact" class="btn-header-enquire" id="header-enquire-btn">Enquire</a>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-open" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
 
-  <!-- Fullscreen Navigation Menu Overlay -->
-  <div class="fullscreen-menu hidden" id="fullscreen-menu" role="dialog" aria-modal="true" aria-label="Site Navigation">
-    <div class="menu-top-bar">
-      <div class="menu-brand">Monica Singh</div>
-      <button class="menu-close-btn" id="menu-close-btn" aria-label="Close menu">Close ✕</button>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="site-logo">Monica Singh</div>
+      <button class="mobile-drawer-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
     </div>
-    <nav class="menu-nav-links">
-      <div class="menu-nav-item active" data-page="home" data-navigate="home" id="menu-item-home">Home</div>
-      <div class="menu-nav-item" data-page="wedding" data-navigate="wedding" id="menu-item-wedding">Wedding anchoring</div>
-      <div class="menu-nav-item" data-page="sangeet" data-navigate="sangeet" id="menu-item-sangeet">Sangeet hosting</div>
-      <div class="menu-nav-item" data-page="corporate" data-navigate="corporate" id="menu-item-corporate">Corporate events</div>
-      <div class="menu-nav-item" data-page="about" data-navigate="about" id="menu-item-about">About</div>
-      <div class="menu-nav-item" data-page="contact" data-navigate="contact" id="menu-item-contact">Get a quote</div>
-    </nav>
-    <div class="menu-footer-meta">
-      <div>Ahmedabad, Gujarat</div>
-      <div>hello@monicasingh.in</div>
-      <div>+91 XXXXX XXXXX</div>
-      <div>Instagram</div>
+    <div class="mobile-nav-links">
+      <a href="#collage">About Monica</a>
+      <a href="sangeet-hosting.html">Sangeet &amp; Wedding Hosting</a>
+      <a href="#services">Corporate Events</a>
+      <a href="#action">Watch Showreel</a>
+      <a href="#gallery">Event Gallery</a>
+      <a href="#testimonials">Client Reviews</a>
+      <a href="#availability">Live Availability</a>
+      <a href="#contact" style="color: var(--color-primary); margin-top: 10px;">Enquire Now &rarr;</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div>Ahmedabad, Gujarat &middot; hello@monicasingh.com</div>
     </div>
   </div>
 
-  <!-- MAIN VIEWS -->
-  <div id="main-content">
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-text">
+        <div class="kicker">Anchor &middot; Emcee &middot; Host &middot; Ahmedabad</div>
+        <h1 class="hero-heading">
+          From <em>sangeet</em> floors to<br>corporate stages.
+        </h1>
+        <p class="hero-description">
+          Monica Singh hosts weddings, product launches and award nights across Gujarat &mdash; in Hindi, English and Gujarati, with a run-of-show rehearsed down to the cue.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" id="hero-btn-availability">Check Availability</a>
+          <a href="#action" class="btn-secondary" id="hero-btn-showreel">Watch showreel</a>
+        </div>
+        <div class="hero-social-proof">
+          <div class="hero-avatars">
+            <img src="assets/kia-closeup.jpg" alt="Monica hosting a Kia dealership milestone event" class="hero-avatar-img">
+            <img src="assets/sangeet-green.jpg" alt="Monica hosting a wedding function" class="hero-avatar-img">
+            <img src="assets/corporate-crowd.jpg" alt="Monica hosting a corporate meet" class="hero-avatar-img">
+          </div>
+          <div class="hero-proof-text">
+            <strong>300+ events</strong> hosted<br>across Gujarat &amp; beyond
+          </div>
+        </div>
+      </div>
 
-    <!-- 1. HOME VIEW -->
-    <div class="view-section active" id="view-home">
-      <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-          <div class="anim-fadeUp">
-            <span class="kicker" style="margin-bottom: 24px;">Wedding &amp; corporate anchor · Gujarat</span>
-            <h1 class="hero-heading">The voice that holds<br />the room together.</h1>
-            <p class="hero-desc">Monica Singh hosts sangeets, receptions, award nights and brand launches across Ahmedabad and Gujarat. Warm on a family stage, precise on a corporate one, and always in control of the running order.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-              <button class="btn-primary" data-navigate="contact" id="hero-cta-quote">Get a quote</button>
-              <button class="btn-secondary" data-navigate="about" id="hero-cta-about">About Monica</button>
-            </div>
-          </div>
-          <div class="hero-image-wrapper">
-            <img src="assets/hero-monica.jpg" alt="Monica Singh hosting a corporate event, microphone in hand" loading="eager" />
-          </div>
-        </section>
+      <div class="hero-visual-col">
+        <div class="hero-glow-bg"></div>
+        <img src="assets/monica-cutout.png" alt="Monica Singh hosting with a microphone" class="hero-cutout-img">
+        <div class="hero-float-badge">
+          <div class="hero-float-num">10+</div>
+          <div class="hero-float-label">Years on stage</div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Stats Grid -->
-        <section class="stats-container" aria-label="Key Achievements">
-          <div class="stat-box">
-            <div class="stat-value">10+</div>
-            <div class="stat-label">Years on stage</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">500+</div>
-            <div class="stat-label">Events hosted</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Languages — Hindi, English, Gujarati</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">Ahmedabad</div>
-            <div class="stat-label">Based in Gujarat, travels pan-India</div>
-          </div>
-        </section>
-
-        <!-- What I Host Section -->
-        <section class="content-section">
-          <h2 class="section-title">What I host</h2>
-          <p class="section-subtitle">Two registers, one standard. Family functions get warmth and pace; corporate stages get script discipline and brand accuracy.</p>
-          <div class="cards-grid">
-            <div class="service-card">
-              <span class="kicker">Wedding</span>
-              <div class="service-card-title">Sangeet nights</div>
-              <div class="service-card-body">Performances, games and family segments held to a running order, so the night moves without anyone feeling rushed.</div>
-              <div class="service-readmore" data-navigate="sangeet">Read more →</div>
-            </div>
-            <div class="service-card">
-              <span class="kicker">Wedding</span>
-              <div class="service-card-title">Haldi, mehendi &amp; engagement</div>
-              <div class="service-card-body">Daytime functions with a lighter touch — music cues, introductions and enough structure to keep the schedule honest.</div>
-            </div>
-            <div class="service-card" data-navigate="corporate" style="cursor: pointer;">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Award &amp; annual nights</div>
-              <div class="service-card-body">Scripted hosting for award ceremonies and annual days: correct names, clean handovers, no dead air on stage.</div>
-              <div class="service-readmore">Read more →</div>
-            </div>
-            <div class="service-card" data-navigate="corporate" style="cursor: pointer;">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Launches &amp; sports leagues</div>
-              <div class="service-card-body">Product and app launches, dealer meets and cricket league days, hosted to brief and to brand.</div>
-              <div class="service-readmore">Read more →</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Events in Action (Media Grid) -->
-        <section class="content-section" style="padding-top: 0;">
-          <h2 class="section-title">Events in action</h2>
-          <p class="section-subtitle">Photos and reels from real sangeets, receptions and corporate stages — this is a performance business, best seen in motion.</p>
-          <div class="media-grid">
-            <div class="media-card">
-              <img src="assets/hero-monica.jpg" alt="Corporate mixer, Ahmedabad — mid-hosting" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Corporate mixer, Ahmedabad — mid-hosting</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/kia-launch-podium.jpg" alt="Kia 500th unit launch — hosting from the podium" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Kia 500th unit launch — podium</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/kia-launch-closeup.jpg" alt="Kia dealership event — welcome address" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Kia dealership event — welcome address</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/haldi-mehendi-outdoor.jpg" alt="Epoxy House marketing meet — stage hosting" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Epoxy House marketing meet</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/corporate-marketing-meet.jpg" alt="Haldi hosting, outdoor lawn function" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Haldi hosting, outdoor lawn</span>
-              </div>
-            </div>
-            <!-- Video Reel Card -->
-            <div class="video-card-container">
-              <video class="video-player" playsinline preload="metadata" loop>
-                <source src="assets/sports-anchor-reel.mp4" type="video/mp4" />
-              </video>
-              <div class="video-play-overlay" title="Play Video Reel">
-                <div class="video-play-btn">
-                  <div class="video-play-icon"></div>
-                </div>
-              </div>
-              <div class="media-caption-badge">
-                <span class="caption-tag">Reel — cricket league anchor</span>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 22px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted);">More reels and photos to be added as high-res event footage is confirmed.</div>
-        </section>
-
-        <!-- How a Booking Works -->
-        <section class="content-section" style="padding-top: 0;">
-          <h2 class="section-title">How a booking works</h2>
-          <p class="section-subtitle">Four steps, from the first message to the last handover on stage.</p>
-          <div class="process-grid">
-            <div class="process-item">
-              <div class="process-num">01</div>
-              <div class="process-title">First call</div>
-              <div class="process-desc">Twenty minutes on the date, venue, guest count and what the function needs to feel like.</div>
-            </div>
-            <div class="process-item">
-              <div class="process-num">02</div>
-              <div class="process-title">Planning</div>
-              <div class="process-desc">I build the running order with your planner, DJ and choreographer, and collect names, pronunciations and family notes.</div>
-            </div>
-            <div class="process-item">
-              <div class="process-num">03</div>
-              <div class="process-title">Rehearsal</div>
-              <div class="process-desc">Where the schedule allows, a run-through with performers and a sound check on the actual stage.</div>
-            </div>
-            <div class="process-item">
-              <div class="process-num">04</div>
-              <div class="process-title">Event day</div>
-              <div class="process-desc">On site early, cues confirmed, and on the mic from the first guest to the last handover.</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Packages -->
-        <section class="content-section" style="padding-top: 0;">
-          <h2 class="section-title">Packages</h2>
-          <p class="section-subtitle">Three ways to book. Every package is quoted against your actual date, venue and hours.</p>
-          <div class="packages-grid">
-            <!-- Package 1 -->
-            <div class="package-card">
-              <div>
-                <div class="package-name">Single function</div>
-                <div class="package-for">One evening — sangeet, reception or engagement</div>
-              </div>
-              <div class="package-price">From ₹35,000</div>
-              <div class="package-items-list">
-                <div class="package-item-row"><span class="package-dot"></span><span>Pre-event planning call</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Running order built with your team</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Up to 4 hours on stage</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Coordination with DJ and lights</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>One host, standard sound requirements</span></div>
-              </div>
-              <button class="btn-primary" data-navigate="contact" style="width: 100%;">Get a quote</button>
-            </div>
-
-            <!-- Package 2 (Featured) -->
-            <div class="package-card featured-card">
-              <span class="featured-badge">Most booked</span>
-              <div>
-                <div class="package-name">Wedding week</div>
-                <div class="package-for">Haldi through reception, hosted as one run</div>
-              </div>
-              <div class="package-price">From ₹1,10,000</div>
-              <div class="package-items-list">
-                <div class="package-item-row"><span class="package-dot"></span><span>Everything in Single function, across 3–4 functions</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Family briefing session before the week</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Rehearsal-day attendance</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Continuity of tone across every function</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Priority date hold</span></div>
-              </div>
-              <button class="btn-primary" data-navigate="contact" style="width: 100%;">Get a quote</button>
-            </div>
-
-            <!-- Package 3 -->
-            <div class="package-card">
-              <div>
-                <div class="package-name">Corporate</div>
-                <div class="package-for">Award nights, annual days, launches and leagues</div>
-              </div>
-              <div class="package-price">From ₹45,000</div>
-              <div class="package-items-list">
-                <div class="package-item-row"><span class="package-dot"></span><span>Script review and brand-name pronunciation check</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Run sheet aligned with your AV team</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Awards and handover choreography</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Rehearsal and tech check on site</span></div>
-                <div class="package-item-row"><span class="package-dot"></span><span>Formal wardrobe to brand guidelines</span></div>
-              </div>
-              <button class="btn-primary" data-navigate="contact" style="width: 100%;">Get a quote</button>
-            </div>
-          </div>
-          <div class="package-footer-note">Starting rates. Final quotes depend on the date, venue, hours on stage and number of functions. Travel and stay outside a 100 km radius of Ahmedabad are billed at cost.</div>
-        </section>
-
-        <!-- Hosted For Chips -->
-        <section class="content-section" style="padding-top: 0;">
-          <span class="kicker" style="margin-bottom: 24px;">Hosted for</span>
-          <div class="clients-wrapper">
-            <div class="client-chip">Cera Tiles</div>
-            <div class="client-chip">UPL</div>
-            <div class="client-chip">Adani Realty</div>
-            <div class="client-chip">Torrent Pharma</div>
-            <div class="client-chip">Zydus</div>
-            <div class="client-chip">Arvind Ltd</div>
-            <div class="client-chip">Nirma</div>
-            <div class="client-chip">Gujarat Gas</div>
-            <div class="clients-more-text">and corporate teams across Gujarat</div>
-          </div>
-        </section>
-
-        <!-- In Their Words Testimonials -->
-        <section class="testimonials-dark-banner">
-          <span class="kicker" style="margin-bottom: 30px;">In their words</span>
-          <div class="quotes-grid">
-            <div>
-              <div class="quote-item-text">“She learned every cousin’s name before the sangeet and ran the night like it was her own family’s.”</div>
-              <div class="quote-item-who">Bride’s family · Sangeet, Ahmedabad</div>
-            </div>
-            <div>
-              <div class="quote-item-text">“Our award night finished on time for the first time in years. That was the anchor.”</div>
-              <div class="quote-item-who">Events lead · Annual awards, Gujarat</div>
-            </div>
-            <div>
-              <div class="quote-item-text">“Bilingual through the whole launch, and every brand name pronounced right. Our leadership noticed.”</div>
-              <div class="quote-item-who">Marketing head · Product launch, Vadodara</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Common Questions FAQs -->
-        <section class="content-section">
-          <h2 class="section-title" style="margin-bottom: 32px;">Common questions</h2>
-          <div class="faqs-container">
-            <div class="faq-row">
-              <h3 class="faq-question">What does an anchor cost?</h3>
-              <p class="faq-answer">Single functions start at ₹35,000 and full wedding weeks at ₹1,10,000. The final figure depends on the date, venue, hours on stage and how many functions you need hosted. Send your date and you’ll have a firm quote the same day.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Which cities do you cover?</h3>
-              <p class="faq-answer">Ahmedabad and across Gujarat as standard — Surat, Vadodara, Rajkot, Gandhinagar. Destination weddings and corporate events elsewhere in India on request.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">How far ahead should we book?</h3>
-              <p class="faq-answer">Three to six months for peak wedding season, November through February. Corporate dates are usually workable at shorter notice.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Which languages do you host in?</h3>
-              <p class="faq-answer">Hindi, English and Gujarati. Bilingual delivery is standard for mixed corporate and family audiences, and the balance is set with you before the event.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Do you work with our planner and DJ?</h3>
-              <p class="faq-answer">Always. The running order is built with your planner, choreographer and DJ so cues, music and lighting land together rather than being called live.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">What do you need from us on the day?</h3>
-              <p class="faq-answer">A working handheld or lapel mic on a separate channel, a copy of the final performance list, and one point of contact from the family or events team.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Bottom CTA -->
-        <section class="bottom-cta-banner">
-          <h2 class="bottom-cta-title">Tell me about your event</h2>
-          <p class="bottom-cta-desc">Dates fill early through the wedding season. Share the date and venue and I'll come back with availability and a quote.</p>
-          <button class="btn-primary" data-navigate="contact" id="home-bottom-quote-btn">Get a quote</button>
-        </section>
-      </main>
+    <!-- 2. Marquee Banner -->
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-content">
+        <span>Sangeet</span><span class="marquee-bullet">&bull;</span><span>Haldi &amp; Mehendi</span><span class="marquee-bullet">&bull;</span><span>Engagements</span><span class="marquee-bullet">&bull;</span><span>Award Nights</span><span class="marquee-bullet">&bull;</span><span>Product Launches</span><span class="marquee-bullet">&bull;</span><span>Annual Meets</span><span class="marquee-bullet">&bull;</span><span>Cricket Leagues</span><span class="marquee-bullet">&bull;</span>
+        <span>Sangeet</span><span class="marquee-bullet">&bull;</span><span>Haldi &amp; Mehendi</span><span class="marquee-bullet">&bull;</span><span>Engagements</span><span class="marquee-bullet">&bull;</span><span>Award Nights</span><span class="marquee-bullet">&bull;</span><span>Product Launches</span><span class="marquee-bullet">&bull;</span><span>Annual Meets</span><span class="marquee-bullet">&bull;</span><span>Cricket Leagues</span><span class="marquee-bullet">&bull;</span>
+      </div>
     </div>
 
-    <!-- 2. WEDDING HUB VIEW -->
-    <div class="view-section" id="view-wedding">
-      <main style="padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 64px) 0;">
-        <span class="kicker" style="margin-bottom: 24px;">Wedding anchoring</span>
-        <h1 class="hero-heading" style="margin-bottom: 24px; max-width: 17ch;">Wedding anchor in Ahmedabad — Monica Singh</h1>
-        <p style="max-width: 56ch; font-size: 17.5px; line-height: 1.75; color: var(--text-dark); margin: 0 0 clamp(44px, 6vw, 72px);">Every function in a Gujarati wedding asks something different from its host. A sangeet needs pace and performance management; a haldi needs warmth and a light hand; an engagement needs the family speeches to land. I host all of them, and I plan each one with the family rather than from a template.</p>
-        
-        <div class="cards-grid">
-          <div class="service-card" data-navigate="sangeet" style="cursor: pointer;">
-            <div class="service-card-title">Sangeet hosting</div>
-            <div class="service-card-body">The big performance night — family acts, games and a running order that holds.</div>
-            <div class="service-readmore">Read more →</div>
-          </div>
-          <div class="service-card">
-            <div class="service-card-title">Haldi &amp; mehendi hosting</div>
-            <div class="service-card-body">Daytime functions, lighter structure, music cues and introductions.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-card-title">Engagement ceremony</div>
-            <div class="service-card-body">Ring exchange, family speeches and the toast, kept on time.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-card-title">Reception hosting</div>
-            <div class="service-card-body">Introductions, cake, first dance and vendor handovers.</div>
-          </div>
-        </div>
-
-        <section style="padding: clamp(64px, 9vw, 110px) 0 0; text-align: center;">
-          <h2 class="section-title" style="font-size: clamp(28px, 3.6vw, 46px); margin-bottom: 16px;">Planning a wedding week?</h2>
-          <p style="max-width: 44ch; margin: 0 auto 30px; font-size: 17px; line-height: 1.7; color: var(--text-muted);">Tell me the dates and functions and I'll quote for the whole run rather than one night at a time.</p>
-          <button class="btn-primary" data-navigate="contact">Get a quote</button>
-        </section>
-      </main>
-    </div>
-
-    <!-- 3. SANGEET MONEY PAGE VIEW -->
-    <div class="view-section" id="view-sangeet">
-      <main style="padding: clamp(56px, 8vw, 100px) clamp(20px, 5vw, 64px) 0;">
-        <div class="breadcrumb-nav">
-          <div class="breadcrumb-link" data-navigate="wedding">Wedding anchoring</div>
-          <div>/</div>
-          <div style="color: var(--text-dark);">Sangeet hosting, Ahmedabad</div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;">
-          <div>
-            <h1 class="hero-heading" style="margin: 0 0 22px; max-width: 16ch;">Sangeet anchor in Ahmedabad — Monica Singh</h1>
-            <p style="max-width: 48ch; font-size: 17.5px; line-height: 1.75; color: var(--text-dark); margin: 0 0 32px;">The sangeet is the night your family has been rehearsing for. I keep it moving — performances on cue, everyone introduced properly, and the energy in the room held from the first act to the last.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-              <button class="btn-primary" data-navigate="contact">Get a quote</button>
-              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20check%20your%20availability" target="_blank" rel="noopener" class="btn-secondary">WhatsApp me</a>
+    <!-- 3. Stats Section -->
+    <section class="stats-section" id="stats-section" aria-label="Key Career Statistics">
+      <div class="container-narrow">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <div class="stat-dot"></div>
             </div>
+            <div class="stat-number" id="stat-years">10+</div>
+            <div class="stat-label">Years Hosting</div>
           </div>
-          <div class="hero-image-wrapper" style="aspect-ratio: 4 / 3;">
-            <img src="assets/corporate-marketing-meet.jpg" alt="Monica Singh hosting sangeet Ahmedabad 2026" loading="eager" />
+          <div class="stat-item stat-item-bordered">
+            <div class="stat-icon-wrapper">
+              <div class="stat-diamond"></div>
+            </div>
+            <div class="stat-number" id="stat-events">300+</div>
+            <div class="stat-label">Events Hosted</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon-wrapper">
+              <div class="stat-square"></div>
+            </div>
+            <div class="stat-number">3</div>
+            <div class="stat-label">Languages</div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Why Sangeet Needs Host & How I Host -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 64px);">
+    <!-- 4. Press & Brands Section -->
+    <section class="press-section" id="press" aria-label="Trusted Clients">
+      <div class="container">
+        <div class="press-card">
           <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 18px;">Why a sangeet needs its own host</h2>
-            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 16.5px; line-height: 1.75; color: var(--text-dark); max-width: 54ch;">
-              <p style="margin: 0;">A sangeet is the hardest function of the week to run. There are eight to fifteen performances, half of them rehearsed the night before, a DJ working from a different list, and two families who both want the floor. Without someone holding the order, the night runs an hour long and the last acts perform to a half-empty room.</p>
-              <p style="margin: 0;">A dedicated anchor fixes that. I take the performance list before the day, sequence it so the energy builds instead of sagging, and keep every changeover short enough that nobody sits down. When something slips — a costume change, a late uncle, a dance that doubles in length — the room never finds out.</p>
-            </div>
+            <div class="kicker kicker-light" style="margin-bottom: 16px;">Trusted by</div>
+            <h2 class="press-heading">Brands that put her on their stage</h2>
+            <p class="press-subtext">Dealership launches, marketing meets and award nights across Gujarat.</p>
           </div>
-          <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 18px;">How I host</h2>
-            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 16.5px; line-height: 1.75; color: var(--text-dark); max-width: 54ch;">
-              <p style="margin: 0;">Warm, confident, and never at anyone's expense. I learn the names before I arrive — the cousins, the chachas, the couple's story — so introductions sound like they come from inside the family rather than off a script.</p>
-              <p style="margin: 0;">I read the room continuously. When the grandparents are enjoying a slow number I let it breathe. When the floor is ready to open, I open it. And when the family wants the mic, I hand it over and step back, which is a skill more anchors should practise.</p>
+          <div class="brands-grid">
+            <div class="brand-box">
+              <div class="brand-name">KIA</div>
+              <div class="brand-kind">Dealership milestone</div>
             </div>
-          </div>
-        </section>
-
-        <!-- What's Included -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">What's included</h2>
-          <div class="included-grid">
-            <div class="included-box">Pre-event call with the family to learn names, order and in-jokes</div>
-            <div class="included-box">Running order built with your choreographer and DJ</div>
-            <div class="included-box">Full anchoring through performances, games and family segments</div>
-            <div class="included-box">Audience games and interactive segments on request</div>
-            <div class="included-box">Coordination with the DJ, lights and photo team through the night</div>
-            <div class="included-box">Hosting in Hindi, English and Gujarati</div>
-          </div>
-        </section>
-
-        <!-- Real Sangeets Hosted Gallery -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">Real sangeets hosted</h2>
-          <div class="media-grid">
-            <div class="media-card">
-              <img src="assets/haldi-mehendi-outdoor.jpg" alt="Outdoor lawn function — sangeet season" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Outdoor lawn function — sangeet season</span>
-              </div>
+            <div class="brand-box">
+              <div class="brand-name">CERA</div>
+              <div class="brand-kind">Brand event</div>
             </div>
-            <div class="media-card">
-              <img src="assets/hero-monica.jpg" alt="Stage hosting, mic in hand" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Stage hosting, mic in hand</span>
-              </div>
+            <div class="brand-box">
+              <div class="brand-name">UPL</div>
+              <div class="brand-kind">Annual meet</div>
             </div>
-            <div class="media-card">
-              <img src="assets/kia-launch-podium.jpg" alt="Podium hosting — corporate style, family stage" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Podium hosting — corporate style, family stage</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Sangeet Testimonials Banner -->
-        <section class="testimonials-dark-banner" style="margin-left: 0; margin-right: 0; margin-top: clamp(56px, 8vw, 100px);">
-          <span class="kicker" style="margin-bottom: 26px;">Client testimonials</span>
-          <div class="quotes-grid">
-            <div>
-              <div class="quote-item-text">“She learned every cousin’s name before the sangeet and ran the night like it was her own family’s.”</div>
-              <div class="quote-item-who">Bride’s family · Sangeet, Ahmedabad</div>
-            </div>
-            <div>
-              <div class="quote-item-text">“Our award night finished on time for the first time in years. That was the anchor.”</div>
-              <div class="quote-item-who">Events lead · Annual awards, Gujarat</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Sangeet FAQs -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">FAQs</h2>
-          <div class="faqs-container">
-            <div class="faq-row">
-              <h3 class="faq-question">How much does a sangeet anchor cost in Ahmedabad?</h3>
-              <p class="faq-answer">Sangeet hosting starts at ₹35,000 for a single evening. The final figure depends on the date, venue, hours on stage and whether you need rehearsal-day attendance. Send your date and you’ll have a quote the same day.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">How far do you travel?</h3>
-              <p class="faq-answer">Ahmedabad and across Gujarat as standard, and pan-India for destination weddings. Travel and stay are billed at cost beyond 100 km from Ahmedabad.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">How early should we book?</h3>
-              <p class="faq-answer">Peak season dates in Gujarat go three to six months out. Off-season, a few weeks is usually enough.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Do you rehearse with the performers?</h3>
-              <p class="faq-answer">Yes, where the schedule allows. A rehearsal-day run-through is the single biggest difference between a sangeet that drags and one that moves.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Check Your Date CTA -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0; display: flex; flex-wrap: wrap; gap: 26px; align-items: center; justify-content: space-between;">
-          <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.4vw, 42px); margin-bottom: 12px;">Check your date</h2>
-            <p style="margin: 0; font-size: 16.5px; color: var(--text-muted); max-width: 42ch; line-height: 1.7;">Send the date and venue on WhatsApp for the fastest reply, or use the quote form.</p>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20check%20your%20availability" target="_blank" rel="noopener" class="btn-primary">WhatsApp me</a>
-            <button class="btn-secondary" data-navigate="contact">Quote form</button>
-          </div>
-        </section>
-
-        <!-- Also See Links -->
-        <section style="padding: clamp(48px, 7vw, 84px) 0 0; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; font-size: 14.5px; color: var(--text-muted);">
-          <span class="kicker">Also see</span>
-          <div style="cursor: pointer;" data-navigate="wedding">Wedding anchoring</div>
-          <div style="cursor: pointer;" data-navigate="about">About Monica</div>
-          <div style="cursor: pointer;" data-navigate="contact">Contact</div>
-        </section>
-      </main>
-    </div>
-
-    <!-- 4. CORPORATE EVENTS VIEW -->
-    <div class="view-section" id="view-corporate">
-      <main style="padding: clamp(56px, 8vw, 100px) clamp(20px, 5vw, 64px) 0;">
-        <div class="breadcrumb-nav">
-          <div class="breadcrumb-link" data-navigate="home">Home</div>
-          <div>/</div>
-          <div style="color: var(--text-dark);">Corporate events, Ahmedabad</div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center;">
-          <div>
-            <h1 class="hero-heading" style="margin: 0 0 22px; max-width: 18ch;">Corporate event anchor in Ahmedabad — Monica Singh</h1>
-            <p style="max-width: 48ch; font-size: 17.5px; line-height: 1.75; color: var(--text-dark); margin: 0 0 32px;">Award nights that run to time. Product launches where every brand name lands right. Annual days that hold 800 people without a dead moment. I host corporate stages with the same preparation I bring to a wedding — and the precision the boardroom expects.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-              <button class="btn-primary" data-navigate="contact">Get a quote</button>
-              <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20discuss%20a%20corporate%20event" target="_blank" rel="noopener" class="btn-secondary">WhatsApp me</a>
-            </div>
-          </div>
-          <div class="hero-image-wrapper" style="aspect-ratio: 4 / 3;">
-            <img src="assets/kia-launch-podium.jpg" alt="Monica Singh hosting a corporate product launch on stage" loading="eager" />
-          </div>
-        </div>
-
-        <!-- What I Host Corporate -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 18px;">Events I host</h2>
-          <p class="section-subtitle">Every corporate stage has its own protocol. Here's what I've hosted — and what I prepare for differently each time.</p>
-          <div class="cards-grid">
-            <div class="service-card">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Award &amp; annual nights</div>
-              <div class="service-card-body">Scripted hosting for award ceremonies and annual days — correct names, clean handovers between presenters, no dead air on stage. Every awardee walks up to the right music, at the right time.</div>
-            </div>
-            <div class="service-card">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Product &amp; brand launches</div>
-              <div class="service-card-body">From automobile reveals to app launches — I host to brief. Brand messaging lands as written, leadership introductions are polished, and the AV cues hit on time.</div>
-            </div>
-            <div class="service-card">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Dealer meets &amp; conferences</div>
-              <div class="service-card-body">Multi-session hosting for dealer conferences, sales meets and industry summits. Agenda management across panels, keynotes and networking breaks.</div>
-            </div>
-            <div class="service-card">
-              <span class="kicker">Corporate</span>
-              <div class="service-card-title">Sports leagues &amp; live events</div>
-              <div class="service-card-body">Cricket league match days, sports award nights and live-audience events — high energy, crowd management, and real-time commentary when the script goes out the window.</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Why Corporate Needs a Pro Anchor & How I Work -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(32px, 5vw, 64px);">
-          <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 18px;">Why your corporate event needs a dedicated anchor</h2>
-            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 16.5px; line-height: 1.75; color: var(--text-dark); max-width: 54ch;">
-              <p style="margin: 0;">A corporate event isn't a party — it's a production. Your leadership is watching, your clients are in the audience, and every minute of dead air costs credibility. An internal team member on the mic means divided attention, unrehearsed handovers, and brand names that don't sound right.</p>
-              <p style="margin: 0;">A professional anchor runs your event like a broadcast: rehearsed transitions, scripted intros that match your brand voice, and the ability to recover from AV glitches, late speakers and schedule overruns without the audience ever noticing.</p>
-            </div>
-          </div>
-          <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 18px;">How I work with your team</h2>
-            <div style="display: flex; flex-direction: column; gap: 18px; font-size: 16.5px; line-height: 1.75; color: var(--text-dark); max-width: 54ch;">
-              <p style="margin: 0;">I start with your event brief — the run sheet, brand guidelines, speaker list and AV plan. I review every name, every designation, every product term until pronunciation is locked. On rehearsal day I walk the stage with your production team so cues, lights and sound are confirmed before a single guest arrives.</p>
-              <p style="margin: 0;">On the day, I arrive early, confirm the final order with your events lead, and stay on comms with the AV booth through the show. If something changes — a speaker delayed, an award order reshuffled — the audience hears a smooth programme, not a scramble.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- What's Included -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">What's included</h2>
-          <div class="included-grid">
-            <div class="included-box">Pre-event briefing call with your events team or agency</div>
-            <div class="included-box">Script review — brand names, designations and pronunciation locked</div>
-            <div class="included-box">Run sheet alignment with AV, lights and production</div>
-            <div class="included-box">On-site rehearsal and tech check before doors open</div>
-            <div class="included-box">Full anchoring — intros, awards, panels and segment transitions</div>
-            <div class="included-box">Bilingual delivery in Hindi, English and Gujarati as needed</div>
-            <div class="included-box">Formal wardrobe matched to your event's dress code or brand colours</div>
-            <div class="included-box">Real-time coordination with backstage and AV booth through the show</div>
-          </div>
-        </section>
-
-        <!-- Corporate Events Gallery -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">Corporate events hosted</h2>
-          <div class="media-grid">
-            <div class="media-card">
-              <img src="assets/kia-launch-podium.jpg" alt="Kia 500th unit launch — hosting from the podium" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Kia 500th unit launch — podium</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/kia-launch-closeup.jpg" alt="Kia dealership event — welcome address" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Kia dealership event — welcome address</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/corporate-marketing-meet.jpg" alt="Epoxy House marketing meet — stage hosting" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Epoxy House marketing meet</span>
-              </div>
-            </div>
-            <div class="media-card">
-              <img src="assets/hero-monica.jpg" alt="Corporate mixer, Ahmedabad — mid-hosting" loading="lazy" />
-              <div class="media-caption-badge">
-                <span class="caption-tag">Corporate mixer — mid-hosting</span>
-              </div>
-            </div>
-            <!-- Video Reel Card -->
-            <div class="video-card-container">
-              <video class="video-player" playsinline preload="metadata" loop>
-                <source src="assets/sports-anchor-reel.mp4" type="video/mp4" />
-              </video>
-              <div class="video-play-overlay" title="Play Video Reel">
-                <div class="video-play-btn">
-                  <div class="video-play-icon"></div>
-                </div>
-              </div>
-              <div class="media-caption-badge">
-                <span class="caption-tag">Reel — sports league anchor</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Brands Hosted For -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <span class="kicker" style="margin-bottom: 24px;">Hosted for</span>
-          <div class="clients-wrapper">
-            <div class="client-chip">Cera Tiles</div>
-            <div class="client-chip">UPL</div>
-            <div class="client-chip">Adani Realty</div>
-            <div class="client-chip">Torrent Pharma</div>
-            <div class="client-chip">Zydus</div>
-            <div class="client-chip">Arvind Ltd</div>
-            <div class="client-chip">Nirma</div>
-            <div class="client-chip">Gujarat Gas</div>
-            <div class="client-chip">Kia Motors</div>
-            <div class="clients-more-text">and corporate teams across Gujarat</div>
-          </div>
-        </section>
-
-        <!-- Corporate Testimonials Banner -->
-        <section class="testimonials-dark-banner" style="margin-left: 0; margin-right: 0; margin-top: clamp(56px, 8vw, 100px);">
-          <span class="kicker" style="margin-bottom: 26px;">Client testimonials</span>
-          <div class="quotes-grid">
-            <div>
-              <div class="quote-item-text">"Our award night finished on time for the first time in years. That was the anchor."</div>
-              <div class="quote-item-who">Events lead · Annual awards, Gujarat</div>
-            </div>
-            <div>
-              <div class="quote-item-text">"Bilingual through the whole launch, and every brand name pronounced right. Our leadership noticed."</div>
-              <div class="quote-item-who">Marketing head · Product launch, Vadodara</div>
-            </div>
-            <div>
-              <div class="quote-item-text">"She managed 14 award categories, three video rolls and a surprise keynote change — and the audience saw a smooth show."</div>
-              <div class="quote-item-who">Event agency · Dealer meet, Ahmedabad</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Corporate FAQs -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0;">
-          <h2 class="section-title" style="font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 28px;">FAQs</h2>
-          <div class="faqs-container">
-            <div class="faq-row">
-              <h3 class="faq-question">How much does a corporate anchor cost?</h3>
-              <p class="faq-answer">Corporate hosting starts at ₹45,000 for a single event. The final quote depends on the event type, duration, number of segments, and whether rehearsal-day attendance is needed. Send your brief and you'll have a firm quote the same day.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Can you host in English and Hindi for a mixed audience?</h3>
-              <p class="faq-answer">Yes — bilingual delivery is standard. I switch between Hindi, English and Gujarati based on the audience and segment. The balance is agreed with your team before the event so nothing feels forced.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Do you need a rehearsal?</h3>
-              <p class="faq-answer">For award nights and launches with AV cues, a rehearsal or tech check is strongly recommended. For simpler formats, a detailed briefing call and run-sheet review are usually enough.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">What information do you need before the event?</h3>
-              <p class="faq-answer">The full run sheet, speaker and awardee list with correct designations, brand guidelines or key messaging points, and one point of contact from your events team. I'll schedule a call to walk through everything.</p>
-            </div>
-            <div class="faq-row">
-              <h3 class="faq-question">Can you handle last-minute script changes?</h3>
-              <p class="faq-answer">Absolutely. Corporate events rarely run exactly to the original plan. I stay on comms with your stage manager and adapt in real time — reshuffled segments, surprise speakers, and running-order changes are part of the job.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Check Your Date CTA -->
-        <section style="padding: clamp(56px, 8vw, 100px) 0 0; display: flex; flex-wrap: wrap; gap: 26px; align-items: center; justify-content: space-between;">
-          <div>
-            <h2 class="section-title" style="font-size: clamp(26px, 3.4vw, 42px); margin-bottom: 12px;">Book your corporate event</h2>
-            <p style="margin: 0; font-size: 16.5px; color: var(--text-muted); max-width: 42ch; line-height: 1.7;">Send the event date, type and a brief outline. I'll come back with availability and a detailed quote.</p>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20discuss%20a%20corporate%20event" target="_blank" rel="noopener" class="btn-primary">WhatsApp me</a>
-            <button class="btn-secondary" data-navigate="contact">Quote form</button>
-          </div>
-        </section>
-
-        <!-- Also See Links -->
-        <section style="padding: clamp(48px, 7vw, 84px) 0 0; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; font-size: 14.5px; color: var(--text-muted);">
-          <span class="kicker">Also see</span>
-          <div style="cursor: pointer;" data-navigate="wedding">Wedding anchoring</div>
-          <div style="cursor: pointer;" data-navigate="sangeet">Sangeet hosting</div>
-          <div style="cursor: pointer;" data-navigate="about">About Monica</div>
-          <div style="cursor: pointer;" data-navigate="contact">Contact</div>
-        </section>
-      </main>
-    </div>
-
-    <!-- 5. ABOUT VIEW -->
-    <div class="view-section" id="view-about">
-      <main style="padding: clamp(56px, 8vw, 110px) clamp(20px, 5vw, 64px) 0;">
-        <span class="kicker" style="margin-bottom: 24px;">About</span>
-        <h1 class="hero-heading" style="margin-bottom: clamp(40px, 6vw, 72px); max-width: 18ch;">Hosting is listening first, speaking second.</h1>
-        <div class="about-grid">
-          <div class="about-sticky-image">
-            <img src="assets/kia-launch-closeup.jpg" alt="Monica Singh smiling on stage at a Kia corporate event" loading="eager" />
-          </div>
-          <div class="about-bio-text">
-            <p style="margin: 0;">I've spent over ten years on stages across Gujarat, from sangeet nights in family farmhouses to award ceremonies for Cera Tiles and UPL. The job looks like talking. It's mostly reading a room — knowing when a family wants the floor, when a CEO needs the clock respected, and when the best thing an anchor can do is step back.</p>
-            <p style="margin: 0;">Weddings are personal work. I meet the families before the function, learn the names and the in-jokes, and build the flow around the people who matter that night rather than a template script. Corporate events are the same instinct applied to a run sheet: brand names pronounced correctly, awards handed out cleanly, and a stage that never goes quiet.</p>
-            <p style="margin: 0;">Outside the mic I'm a fitness regular, an unrepentant food person, and an equalist — that last one shows up on stage whether or not anyone asks. I don't host jokes at anyone's expense. Warmth carries a room further than punchlines.</p>
-            <p style="margin: 0;">I host in Hindi, English and Gujarati, switching between them as the room needs rather than sticking to a fixed script. Ahmedabad is home; I travel across Gujarat as standard and pan-India for destination weddings and corporate events.</p>
-            <div class="facts-grid">
-              <div>
-                <span class="kicker" style="margin-bottom: 8px;">Based in</span>
-                <div style="font-size: 15.5px; color: var(--text-dark); line-height: 1.5;">Ahmedabad, Gujarat</div>
-              </div>
-              <div>
-                <span class="kicker" style="margin-bottom: 8px;">Travels</span>
-                <div style="font-size: 15.5px; color: var(--text-dark); line-height: 1.5;">Across Gujarat and pan-India</div>
-              </div>
-              <div>
-                <span class="kicker" style="margin-bottom: 8px;">Languages</span>
-                <div style="font-size: 15.5px; color: var(--text-dark); line-height: 1.5;">Hindi, English, Gujarati</div>
-              </div>
-              <div>
-                <span class="kicker" style="margin-bottom: 8px;">Brands hosted</span>
-                <div style="font-size: 15.5px; color: var(--text-dark); line-height: 1.5;">Cera Tiles, UPL and more</div>
-              </div>
+            <div class="brand-box">
+              <div class="brand-name">EPOXY HOUSE</div>
+              <div class="brand-kind">Marketing meet</div>
             </div>
           </div>
         </div>
-        <section style="padding: clamp(64px, 9vw, 120px) 0; text-align: center;">
-          <button class="btn-primary" data-navigate="contact">Check my availability</button>
-        </section>
-      </main>
-    </div>
+      </div>
+    </section>
 
-    <!-- 5. CONTACT VIEW -->
-    <div class="view-section" id="view-contact">
-      <main class="contact-layout">
-        <div>
-          <span class="kicker" style="margin-bottom: 24px;">Get a quote</span>
-          <h1 class="hero-heading" style="margin-bottom: 22px; max-width: 14ch;">Let's talk about your date.</h1>
-          <p style="max-width: 44ch; font-size: 17px; line-height: 1.72; color: var(--text-dark); margin: 0 0 34px;">Send the date, venue and type of function. I'll reply within a day with availability and a quote.</p>
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20check%20your%20availability" target="_blank" rel="noopener" class="contact-whatsapp-btn">
-            <span class="indicator-dot"></span>
-            Message on WhatsApp
+    <!-- 5. About / Collage Section -->
+    <section class="collage-section" id="collage">
+      <div class="container">
+        <div class="collage-grid">
+          <div class="collage-visual">
+            <div class="collage-arch-img">
+              <img src="assets/kia-closeup.jpg" alt="Monica Singh hosting a Kia milestone event on stage">
+            </div>
+            <div class="collage-overlap-img">
+              <img src="assets/sangeet-green.jpg" alt="Monica Singh hosting a wedding function outdoors">
+            </div>
+            <div class="collage-badge">
+              <div class="collage-badge-num">3</div>
+              <div class="collage-badge-label">Languages hosted on stage</div>
+            </div>
+          </div>
+
+          <div class="collage-text-content">
+            <div class="kicker kicker-muted" style="margin-bottom: 20px;">About Monica</div>
+            <h2 class="section-title" style="font-size: 46px; line-height: 1.18; margin-bottom: 26px;">
+              Ten years of reading a room and never losing it.
+            </h2>
+            <p>
+              Based in Ahmedabad, Monica hosts sangeets, haldi ceremonies, product launches and award functions across Gujarat. She moves easily between Hindi, English and Gujarati, and between a dance-floor sangeet and a corporate stage.
+            </p>
+            <p style="margin-bottom: 34px;">
+              Every event gets a written run-of-show, rehearsed transitions, and a host who keeps the energy where it needs to be &mdash; up for a baraat, composed for a keynote.
+            </p>
+            <a href="#contact" class="collage-link">Work with Monica &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Signature Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="kicker kicker-muted" style="margin-bottom: 18px;">Signature Services</div>
+          <h2 class="section-title">Hosting for every occasion</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- 01: Wedding Anchoring -->
+          <a href="sangeet-hosting.html" class="service-card service-card-beige">
+            <div class="service-card-img-wrap">
+              <img src="assets/sangeet-green.jpg" alt="Monica hosting a wedding function">
+            </div>
+            <div class="service-card-body">
+              <div class="service-card-num">01</div>
+              <h3 class="service-card-title">Wedding Anchoring</h3>
+              <p class="service-card-desc">Sangeet, haldi, mehendi and reception hosting with a rehearsed run-of-show and a live read of the room.</p>
+              <span class="service-card-link-text">Learn more &rarr;</span>
+            </div>
           </a>
-          <div class="contact-meta-list">
-            <div class="contact-meta-row">
-              <div class="contact-meta-label">Email</div>
-              <div class="contact-meta-val">hello@monicasingh.in</div>
+
+          <!-- 02: Corporate Events -->
+          <a href="#contact" class="service-card service-card-burgundy">
+            <div class="service-card-img-wrap">
+              <img src="assets/epoxy-stage.jpg" alt="Monica hosting a corporate marketing meet">
             </div>
-            <div class="contact-meta-row">
-              <div class="contact-meta-label">Phone</div>
-              <div class="contact-meta-val">+91 XXXXX XXXXX</div>
+            <div class="service-card-body">
+              <div class="service-card-num">02</div>
+              <h3 class="service-card-title">Corporate Events</h3>
+              <p class="service-card-desc">Award functions, product launches and annual meets hosted with pace, polish and bilingual scripting.</p>
+              <span class="service-card-link-text">Learn more &rarr;</span>
             </div>
-            <div class="contact-meta-row">
-              <div class="contact-meta-label">Based in</div>
-              <div class="contact-meta-val">Ahmedabad, Gujarat</div>
+          </a>
+
+          <!-- 03: Special Occasions -->
+          <a href="#contact" class="service-card service-card-beige">
+            <div class="service-card-img-wrap">
+              <img src="assets/kia-podium.jpg" alt="Monica at the podium for a milestone event">
             </div>
-            <div class="contact-meta-row">
-              <div class="contact-meta-label">Response</div>
-              <div class="contact-meta-val">Within one working day</div>
+            <div class="service-card-body">
+              <div class="service-card-num">03</div>
+              <h3 class="service-card-title">Special Occasions</h3>
+              <p class="service-card-desc">Engagements, cricket leagues and milestone celebrations, scripted and hosted end to end.</p>
+              <span class="service-card-link-text">Learn more &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Showreel Section -->
+    <section class="showreel-section" id="action">
+      <div class="container">
+        <div class="showreel-top">
+          <div style="max-width: 620px;">
+            <div class="kicker kicker-light" style="margin-bottom: 18px;">Showreel</div>
+            <h2 class="section-title section-title-dark" style="margin: 0;">
+              Watch Monica <em style="font-style: italic; color: var(--color-primary-light);">work a room</em>
+            </h2>
+          </div>
+          <a href="#contact" class="btn-primary" style="white-space: nowrap;">Book a date</a>
+        </div>
+
+        <div class="showreel-grid">
+          <div class="showreel-video-wrap">
+            <video src="assets/reel.mp4" poster="assets/corporate-crowd.jpg" controls playsinline preload="metadata"></video>
+          </div>
+          <div class="showreel-points">
+            <div class="showreel-point-item">
+              <div class="showreel-point-num">01</div>
+              <div>
+                <div class="showreel-point-title">Crowd work that lands</div>
+                <div class="showreel-point-desc">Reading the room in real time and pulling the energy back up when a segment runs long.</div>
+              </div>
+            </div>
+            <div class="showreel-point-item">
+              <div class="showreel-point-num">02</div>
+              <div>
+                <div class="showreel-point-title">Cues, not guesses</div>
+                <div class="showreel-point-desc">Every entry, performance and handover is rehearsed with the DJ and choreographer beforehand.</div>
+              </div>
+            </div>
+            <div class="showreel-point-item">
+              <div class="showreel-point-num">03</div>
+              <div>
+                <div class="showreel-point-title">Three languages, one flow</div>
+                <div class="showreel-point-desc">Switching between Hindi, English and Gujarati without breaking the pace of the evening.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Gallery Section -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="kicker kicker-muted" style="margin-bottom: 18px;">Gallery</div>
+          <h2 class="section-title">Recent events</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="assets/epoxy-stage.jpg" alt="Monica Singh hosting the Epoxy House marketing meet on stage" class="gallery-img gallery-span-2">
+          <img src="assets/kia-podium.jpg" alt="Monica Singh at the podium for a Kia dealership launch" class="gallery-img">
+          <img src="assets/sangeet-green.jpg" alt="Monica Singh hosting a wedding celebration outdoors" class="gallery-img">
+          <img src="assets/corporate-crowd.jpg" alt="Monica Singh working the crowd at a corporate event" class="gallery-img">
+          <img src="assets/kia-closeup.jpg" alt="Monica Singh speaking at a Kia milestone event" class="gallery-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header-center">
+          <div class="kicker kicker-muted" style="margin-bottom: 18px;">Client words</div>
+          <h2 class="section-title">What hosts hear afterwards</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-quote-mark">&ldquo;</div>
+            <p class="testimonial-quote">Monica read the room perfectly all night. The sangeet never lost energy.</p>
+            <div class="testimonial-author">
+              <img src="assets/sangeet-green.jpg" alt="Priya Shah" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Priya Shah</div>
+                <div class="testimonial-role">Sangeet, Ahmedabad</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote-mark">&ldquo;</div>
+            <p class="testimonial-quote">Sharp, well-prepared, and completely bilingual on stage. Exactly what our launch needed.</p>
+            <div class="testimonial-author">
+              <img src="assets/kia-closeup.jpg" alt="Rohit Mehta" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Rohit Mehta</div>
+                <div class="testimonial-role">Product Launch, Vadodara</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-quote-mark">&ldquo;</div>
+            <p class="testimonial-quote">She handled a packed award night schedule without a single dead moment.</p>
+            <div class="testimonial-author">
+              <img src="assets/corporate-crowd.jpg" alt="Anita Desai" class="testimonial-avatar">
+              <div>
+                <div class="testimonial-name">Anita Desai</div>
+                <div class="testimonial-role">Corporate Awards, Surat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Contact CTA Section -->
+    <section class="contact-section" id="contact">
+      <div class="cta-deco-circle-1"></div>
+      <div class="cta-deco-circle-2"></div>
+      <div class="container">
+        <div class="contact-content">
+          <h2 class="contact-heading">Planning something soon?</h2>
+          <p class="contact-subtext">Share the date and the occasion, and Monica will come back with availability and a quote.</p>
+          <div class="contact-actions">
+            <a href="mailto:hello@monicasingh.com" class="btn-light" id="cta-email-btn">Check Availability</a>
+            <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" class="btn-outline-white" id="cta-whatsapp-btn">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Availability Calendar Section -->
+    <section class="calendar-section" id="availability">
+      <div class="container" id="availability-calendar">
+        <div class="calendar-top">
+          <div style="max-width: 640px;">
+            <div class="kicker kicker-muted" style="margin-bottom: 18px;">Availability</div>
+            <h2 class="section-title" style="margin-bottom: 16px;">Check the dates before you ask</h2>
+            <p style="font-size: 17px; line-height: 1.8; color: var(--color-text-muted); margin: 0;">
+              Confirmed bookings are shown below with their time slots. Pick a date that's open, or tap a booked one to see what's already held.
+            </p>
+          </div>
+          <div class="calendar-legend">
+            <div class="legend-item">
+              <span class="legend-pill legend-pill-booked"></span>
+              <span>Fully booked</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-pill legend-pill-partly"></span>
+              <span>Partly held</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-pill legend-pill-open"></span>
+              <span>Open</span>
             </div>
           </div>
         </div>
 
-        <div class="contact-form-card">
-          <!-- Interactive Form -->
-          <form id="quote-form" autocomplete="on">
-            <div class="form-group">
-              <label class="form-label" for="field-name">Name</label>
-              <input class="form-input" type="text" id="field-name" name="name" placeholder="Your name" required />
+        <div class="calendar-grid-wrap">
+          <!-- Calendar Card -->
+          <div class="calendar-card">
+            <div class="calendar-nav-bar">
+              <button class="cal-nav-btn" id="cal-prev-btn" aria-label="Previous month">&larr;</button>
+              <div class="cal-month-title" id="cal-month-title">August 2026</div>
+              <button class="cal-nav-btn" id="cal-next-btn" aria-label="Next month">&rarr;</button>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="field-phone">Phone</label>
-              <input class="form-input" type="tel" id="field-phone" name="phone" placeholder="+91" required />
+            <div class="cal-weekdays-grid">
+              <div class="cal-weekday">Sun</div>
+              <div class="cal-weekday">Mon</div>
+              <div class="cal-weekday">Tue</div>
+              <div class="cal-weekday">Wed</div>
+              <div class="cal-weekday">Thu</div>
+              <div class="cal-weekday">Fri</div>
+              <div class="cal-weekday">Sat</div>
             </div>
-            <div class="form-group">
-              <label class="form-label" for="field-event-type">Event type</label>
-              <input class="form-input" type="text" id="field-event-type" name="eventType" placeholder="Sangeet, award night, launch…" required />
+            <div class="cal-days-grid" id="cal-days-grid">
+              <!-- Rendered dynamically by app.js -->
             </div>
-            <div class="form-group">
-              <label class="form-label" for="field-event-date">Event date</label>
-              <input class="form-input" type="text" id="field-event-date" name="eventDate" placeholder="DD / MM / YYYY" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="field-venue">Venue or city</label>
-              <input class="form-input" type="text" id="field-venue" name="venue" placeholder="Ahmedabad" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="field-message">Anything else</label>
-              <textarea class="form-textarea" id="field-message" name="message" rows="4" placeholder="Guest count, languages, timings"></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width: 100%;" id="btn-submit-enquiry">Send enquiry</button>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-top: 14px; text-align: center;">You'll get a reply within one working day, with availability and a firm quote.</div>
-          </form>
+          </div>
 
-          <!-- Success State -->
-          <div class="form-success-box" id="form-success-box" style="display: none;">
-            <div class="form-success-title">Thank you.</div>
-            <div class="form-success-msg">Your enquiry is in. I'll come back within a day.</div>
-            <button class="btn-secondary" id="reset-form-btn" style="margin-top: 24px;">Send another enquiry</button>
+          <!-- Booking Details Panel -->
+          <div>
+            <div class="booking-panel-title" id="cal-panel-title">Booked in August 2026</div>
+            <div id="cal-panel-content">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+            <div class="calendar-disclaimer">
+              Dates shown are confirmed holds and update as bookings come in. Tentative enquiries are not listed.
+            </div>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </section>
+  </main>
 
-  </div>
-
-  <!-- Global Footer -->
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-brand" data-navigate="home" style="cursor: pointer;">Monica Singh</div>
-    <div class="footer-nav-links">
-      <div class="footer-link" data-navigate="home">Home</div>
-      <div class="footer-link" data-navigate="wedding">Wedding anchoring</div>
-      <div class="footer-link" data-navigate="sangeet">Sangeet hosting</div>
-      <div class="footer-link" data-navigate="corporate">Corporate events</div>
-      <div class="footer-link" data-navigate="about">About</div>
-      <div class="footer-link" data-navigate="contact">Contact</div>
-      <div>Ahmedabad, Gujarat</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Monica Singh</div>
+          <p class="footer-bio">Wedding and corporate event anchoring across Ahmedabad and Gujarat.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Explore</div>
+          <div class="footer-links-list">
+            <a href="#collage" class="footer-link">About</a>
+            <a href="#action" class="footer-link">Showreel</a>
+            <a href="#gallery" class="footer-link">Gallery</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links-list">
+            <a href="sangeet-hosting.html" class="footer-link">Wedding Anchoring</a>
+            <a href="#services" class="footer-link">Corporate Events</a>
+            <a href="#services" class="footer-link">Special Occasions</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-links-list">
+            <a href="mailto:hello@monicasingh.com" class="footer-link">hello@monicasingh.com</a>
+            <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-row">
+        <div>Ahmedabad, Gujarat</div>
+        <div>&copy; 2026 Monica Singh. All rights reserved.</div>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Pill Button -->
-  <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Monica%2C%20I%27d%20like%20to%20check%20your%20availability" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat on WhatsApp">
-    <span class="floating-whatsapp-dot"></span>
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/910000000000" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floating-whatsapp" aria-label="Chat on WhatsApp">
     WhatsApp
   </a>
 
-  <!-- Application Script -->
+  <!-- JavaScript -->
   <script src="js/app.js"></script>
 </body>
 </html>

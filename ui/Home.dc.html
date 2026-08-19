@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #FAF7F2; }
+  a { color: #7A2331; text-decoration: none; }
+  a:hover { color: #5c1a25; }
+  ::selection { background: #F0C9C0; }
+  @keyframes glowPulse { 0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.92; } 50% { transform: translate(-50%, -50%) scale(1.04); opacity: 1; } }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="font-family: 'Jost', sans-serif; color: #1C1712; background: #FAF7F2; overflow-x: hidden;">
+
+  <header style="{{ headerStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; white-space: nowrap;">Monica Singh</div>
+      <nav style="display: flex; gap: 26px; align-items: center; white-space: nowrap;">
+        <a href="#collage" style="{{ navLinkStyle }}">About</a>
+        <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position: relative;">
+          <a href="#services" style="{{ navLinkStyle }} display: inline-flex; align-items: center; gap: 7px;">Services <span style="{{ caretStyle }}">&#9662;</span></a>
+          <div style="{{ dropdownStyle }}">
+            <div style="background: #FAF7F2; border: 1px solid #EAE3D8; border-radius: 16px; padding: 10px; box-shadow: 0 22px 48px rgba(28,23,18,0.16);">
+              <sc-for list="{{ serviceMenu }}" as="m" hint-placeholder-count="4">
+                <a href="{{ m.href }}" style="display: block; padding: 13px 20px; font-size: 14px; color: #1C1712; border-radius: 10px; text-transform: none; letter-spacing: 0;" style-hover="background:#EAE3D8;">{{ m.label }}</a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <a href="#action" style="{{ navLinkStyle }}">Showreel</a>
+        <a href="#gallery" style="{{ navLinkStyle }}">Gallery</a>
+        <a href="#testimonials" style="{{ navLinkStyle }}">Reviews</a>
+        <a href="#availability" style="{{ navLinkStyle }}">Availability</a>
+      </nav>
+      <a href="#contact" style="background: #7A2331; color: #FAF7F2; padding: 13px 28px; border-radius: 999px; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap;" style-hover="background:#5c1a25;">Enquire</a>
+    </div>
+  </header>
+
+  <section style="position: relative; max-width: 1340px; margin: 0 auto; padding: 150px 40px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 40px; align-items: center;">
+    <div style="{{ heroTextStyle }}">
+      <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #7A2331; font-weight: 600; margin-bottom: 26px;">Anchor &middot; Emcee &middot; Host &middot; Ahmedabad</div>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 5.4vw, 82px); line-height: 1.02; margin: 0 0 28px; font-weight: 600; letter-spacing: -1.5px;">
+        From <em style="font-style: italic; color: #7A2331;">sangeet</em> floors to<br/>corporate stages.
+      </h1>
+      <p style="font-size: 18px; line-height: 1.75; color: #6B6058; max-width: 470px; margin: 0 0 36px;">Monica Singh hosts weddings, product launches and award nights across Gujarat &mdash; in Hindi, English and Gujarati, with a run-of-show rehearsed down to the cue.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 42px;">
+        <a href="#contact" style="display: inline-block; background: #7A2331; color: #FAF7F2; padding: 18px 36px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; box-shadow: 0 16px 36px rgba(122,35,49,0.28);" style-hover="background:#5c1a25;">Check Availability</a>
+        <a href="#action" style="display: inline-block; border: 1px solid #1C1712; color: #1C1712; padding: 18px 36px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;" style-hover="background:#1C1712;color:#FAF7F2;">Watch showreel</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="display: flex;">
+          <img src="assets/kia-closeup.jpg" alt="Monica hosting a Kia dealership milestone event" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #FAF7F2;"/>
+          <img src="assets/sangeet-green.jpg" alt="Monica hosting a wedding function" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #FAF7F2; margin-left: -12px;"/>
+          <img src="assets/corporate-crowd.jpg" alt="Monica hosting a corporate meet" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 2px solid #FAF7F2; margin-left: -12px;"/>
+        </div>
+        <div style="font-size: 13px; line-height: 1.5; color: #6B6058;"><strong style="color: #1C1712;">300+ events</strong> hosted<br/>across Gujarat &amp; beyond</div>
+      </div>
+    </div>
+    <div style="position: relative; min-width: 0;">
+      <div style="position: absolute; left: 50%; top: 46%; width: min(46vw, 560px); height: min(46vw, 560px); transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at 50% 45%, #7A2331 0%, #a63d4c 42%, #F0C9C0 72%, rgba(240,201,192,0) 100%); animation: glowPulse 7s ease-in-out infinite;"></div>
+      <img src="assets/monica-cutout.png" alt="Monica Singh hosting with a microphone" style="position: relative; display: block; width: 100%; max-width: 520px; margin: 0 auto; height: auto;"/>
+      <div style="position: absolute; bottom: 40px; left: -10px; background: #FAF7F2; border: 1px solid #EAE3D8; border-radius: 18px; padding: 16px 22px; box-shadow: 0 20px 44px rgba(28,23,18,0.14); animation: floatY 6s ease-in-out infinite;">
+        <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 28px; line-height: 1;">10+</div>
+        <div style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #6B6058; margin-top: 6px;">Years on stage</div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background: #1C1712; padding: 18px 0; overflow: hidden; white-space: nowrap;">
+    <div style="display: inline-flex; gap: 60px; animation: marquee 26s linear infinite; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #FAF7F2;">
+      <span>Sangeet</span><span style="color:#7A2331">&bull;</span><span>Haldi &amp; Mehendi</span><span style="color:#7A2331">&bull;</span><span>Engagements</span><span style="color:#7A2331">&bull;</span><span>Award Nights</span><span style="color:#7A2331">&bull;</span><span>Product Launches</span><span style="color:#7A2331">&bull;</span><span>Annual Meets</span><span style="color:#7A2331">&bull;</span><span>Cricket Leagues</span><span style="color:#7A2331">&bull;</span>
+      <span>Sangeet</span><span style="color:#7A2331">&bull;</span><span>Haldi &amp; Mehendi</span><span style="color:#7A2331">&bull;</span><span>Engagements</span><span style="color:#7A2331">&bull;</span><span>Award Nights</span><span style="color:#7A2331">&bull;</span><span>Product Launches</span><span style="color:#7A2331">&bull;</span><span>Annual Meets</span><span style="color:#7A2331">&bull;</span><span>Cricket Leagues</span><span style="color:#7A2331">&bull;</span>
+    </div>
+  </div>
+
+  <section ref="{{ statsRef }}" style="{{ statsSectionStyle }}">
+    <div style="max-width: 1140px; margin: 0 auto; padding: 70px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center;">
+      <div>
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #EAE3D8; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center;"><div style="width: 18px; height: 18px; border-radius: 50%; background: #7A2331;"></div></div>
+        <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 54px; line-height: 1;">{{ statYears }}+</div>
+        <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6B6058; margin-top: 10px;">Years Hosting</div>
+      </div>
+      <div style="border-left: 1px solid #EAE3D8; border-right: 1px solid #EAE3D8;">
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #EAE3D8; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center;"><div style="width: 18px; height: 18px; background: #7A2331; transform: rotate(45deg);"></div></div>
+        <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 54px; line-height: 1;">{{ statEvents }}+</div>
+        <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6B6058; margin-top: 10px;">Events Hosted</div>
+      </div>
+      <div>
+        <div style="width: 54px; height: 54px; border-radius: 50%; background: #EAE3D8; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center;"><div style="width: 18px; height: 18px; border-radius: 4px; background: #7A2331;"></div></div>
+        <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 54px; line-height: 1;">{{ statLanguages }}</div>
+        <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6B6058; margin-top: 10px;">Languages</div>
+      </div>
+    </div>
+  </section>
+
+  <section ref="{{ pressRef }}" style="{{ pressSectionStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 90px 40px; position: relative; z-index: 1;">
+      <div style="background: #1C1712; border-radius: 28px; padding: 54px 56px; display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr); gap: 56px; align-items: center; box-shadow: 0 40px 80px rgba(28,23,18,0.16);">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #F0C9C0; margin-bottom: 16px;">Trusted by</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 600; line-height: 1.15; color: #FAF7F2; margin: 0 0 14px;">Brands that put her on their stage</h2>
+          <p style="font-size: 15px; line-height: 1.75; color: #a89e94; margin: 0;">Dealership launches, marketing meets and award nights across Gujarat.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+          <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+            <div style="border: 1px solid #332c25; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; gap: 8px; transition: background 0.3s ease, border-color 0.3s ease;" style-hover="background:#241d17;border-color:#7A2331;">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; letter-spacing: 1.5px; color: #FAF7F2; line-height: 1;">{{ c.name }}</div>
+              <div style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: #7f766d;">{{ c.kind }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collage" ref="{{ collageRef }}" style="{{ collageSectionStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 120px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 80px; align-items: center;">
+      <div style="position: relative; height: 580px;">
+        <div style="position: absolute; top: 0; left: 0; width: 66%; height: 88%; border-radius: 240px 240px 20px 20px; overflow: hidden; box-shadow: 0 40px 80px rgba(28,23,18,0.2);">
+          <img src="assets/kia-closeup.jpg" alt="Monica Singh hosting a Kia milestone event on stage" style="width: 100%; height: 100%; object-fit: cover;"/>
+        </div>
+        <div style="position: absolute; bottom: 0; right: 0; width: 50%; height: 48%; border-radius: 20px; overflow: hidden; border: 8px solid #FAF7F2; box-shadow: 0 24px 48px rgba(28,23,18,0.22);">
+          <img src="assets/sangeet-green.jpg" alt="Monica Singh hosting a wedding function outdoors" style="width: 100%; height: 100%; object-fit: cover;"/>
+        </div>
+        <div style="position: absolute; top: 24px; right: -6px; background: #7A2331; color: #FAF7F2; border-radius: 20px; padding: 22px 26px; max-width: 168px; box-shadow: 0 20px 40px rgba(122,35,49,0.32); animation: floatY 6s ease-in-out infinite;">
+          <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 32px; line-height: 1; margin-bottom: 6px;">3</div>
+          <div style="font-size: 12px; line-height: 1.4; color: #F0C9C0;">Languages hosted on stage</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 20px;">About Monica</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; line-height: 1.18; margin: 0 0 26px;">Ten years of reading a room and never losing it.</h2>
+        <p style="font-size: 17px; line-height: 1.85; color: #6B6058; margin: 0 0 20px;">Based in Ahmedabad, Monica hosts sangeets, haldi ceremonies, product launches and award functions across Gujarat. She moves easily between Hindi, English and Gujarati, and between a dance-floor sangeet and a corporate stage.</p>
+        <p style="font-size: 17px; line-height: 1.85; color: #6B6058; margin: 0 0 34px;">Every event gets a written run-of-show, rehearsed transitions, and a host who keeps the energy where it needs to be &mdash; up for a baraat, composed for a keynote.</p>
+        <a href="#contact" style="font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; color: #7A2331; border-bottom: 1px solid #7A2331; padding-bottom: 5px;">Work with Monica &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" ref="{{ servicesRef }}" style="{{ servicesSectionStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 110px 40px;">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">Signature Services</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; margin: 0;">Hosting for every occasion</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+          <a href="{{ s.href }}" style="display: block; position: relative; background: {{ s.bg }}; border-radius: 24px; overflow: hidden; box-shadow: 0 2px 10px rgba(28,23,18,0.04); transition: transform 0.35s ease, box-shadow 0.35s ease;" style-hover="transform:translateY(-10px);box-shadow:0 28px 56px rgba(28,23,18,0.16);">
+            <div style="height: 300px; overflow: hidden;">
+              <img src="{{ s.img }}" alt="{{ s.alt }}" style="width: 100%; height: 100%; object-fit: cover;"/>
+            </div>
+            <div style="padding: 46px 40px 52px; position: relative;">
+              <div style="position: absolute; top: 16px; right: 24px; font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -2px; font-size: 92px; color: {{ s.numColor }}; opacity: 0.45; line-height: 1;">{{ s.num }}</div>
+              <h3 style="position: relative; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; margin: 0 0 18px; color: {{ s.textColor }};">{{ s.title }}</h3>
+              <p style="position: relative; font-size: 16px; line-height: 1.8; margin: 0 0 30px; color: {{ s.descColor }};">{{ s.desc }}</p>
+              <span style="position: relative; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; color: {{ s.textColor }};">Learn more &rarr;</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="action" style="background: #1C1712; padding: 110px 40px;">
+    <div style="max-width: 1340px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 56px;">
+        <div style="max-width: 620px;">
+          <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #F0C9C0; margin-bottom: 18px;">Showreel</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: #FAF7F2; line-height: 1.15; margin: 0;">Watch Monica <em style="font-style: italic; color: #F0C9C0;">work a room</em></h2>
+        </div>
+        <a href="#contact" style="display: inline-block; background: #7A2331; color: #FAF7F2; padding: 17px 34px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600; white-space: nowrap;" style-hover="background:#F0C9C0;color:#1C1712;">Book a date</a>
+      </div>
+      <div style="display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 60px; align-items: center;">
+        <div style="border-radius: 24px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.45); background: #000;">
+          <video src="assets/reel.mp4" poster="assets/corporate-crowd.jpg" controls playsinline preload="metadata" style="width: 100%; display: block; aspect-ratio: 9 / 16; object-fit: cover;"></video>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <sc-for list="{{ reelPoints }}" as="p" hint-placeholder-count="3">
+            <div style="padding: 26px 0; border-top: 1px solid #332c25; display: grid; grid-template-columns: 54px 1fr; gap: 22px; align-items: start;">
+              <div style="font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: -1px; font-size: 26px; color: #7A2331;">{{ p.num }}</div>
+              <div>
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #FAF7F2; margin-bottom: 8px;">{{ p.title }}</div>
+                <div style="font-size: 15px; line-height: 1.7; color: #a89e94;">{{ p.desc }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" style="padding: 110px 40px; max-width: 1340px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">Gallery</div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; margin: 0;">Recent events</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 190px; gap: 20px;">
+      <img src="assets/epoxy-stage.jpg" alt="Monica Singh hosting the Epoxy House marketing meet on stage" style="grid-column: span 2; grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+      <img src="assets/kia-podium.jpg" alt="Monica Singh at the podium for a Kia dealership launch" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+      <img src="assets/sangeet-green.jpg" alt="Monica Singh hosting a wedding celebration outdoors" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+      <img src="assets/corporate-crowd.jpg" alt="Monica Singh working the crowd at a corporate event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+      <img src="assets/kia-closeup.jpg" alt="Monica Singh speaking at a Kia milestone event" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;"/>
+    </div>
+  </section>
+
+  <section id="testimonials" ref="{{ testimonialsRef }}" style="{{ testimonialsSectionStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 110px 40px;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">Client words</div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; margin: 0;">What hosts hear afterwards</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+        <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+          <div style="background: #FAF7F2; border-radius: 24px; padding: 40px 34px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 2px 10px rgba(28,23,18,0.04);">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 60px; line-height: 0.6; color: #7A2331;">&ldquo;</div>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.55; margin: 0; flex: 1;">{{ t.quote }}</p>
+            <div style="display: flex; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid #EAE3D8;">
+              <img src="{{ t.avatar }}" alt="{{ t.name }}" style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover;"/>
+              <div>
+                <div style="font-weight: 600; font-size: 14px;">{{ t.name }}</div>
+                <div style="font-size: 13px; color: #6B6058;">{{ t.event }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" ref="{{ ctaRef }}" style="{{ ctaSectionStyle }}">
+    <div style="position: absolute; top: -80px; left: -80px; width: 300px; height: 300px; border-radius: 50%; background: rgba(240,201,192,0.16);"></div>
+    <div style="position: absolute; bottom: -110px; right: -70px; width: 340px; height: 340px; border-radius: 50%; background: rgba(240,201,192,0.12);"></div>
+    <div style="max-width: 760px; margin: 0 auto; padding: 130px 40px; text-align: center; position: relative;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: #FAF7F2; margin: 0 0 24px;">Planning something soon?</h2>
+      <p style="font-size: 17px; color: #F0C9C0; margin: 0 0 40px;">Share the date and the occasion, and Monica will come back with availability and a quote.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:hello@monicasingh.com" style="display: inline-block; background: #FAF7F2; color: #7A2331; padding: 19px 42px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;" style-hover="background:#F0C9C0;">Check Availability</a>
+        <a href="https://wa.me/910000000000" style="display: inline-block; border: 1px solid #F0C9C0; color: #FAF7F2; padding: 19px 42px; border-radius: 999px; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 600;" style-hover="background:#F0C9C0;color:#7A2331;">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="availability" ref="{{ calendarRef }}" style="{{ calendarSectionStyle }}">
+    <div style="max-width: 1340px; margin: 0 auto; padding: 110px 40px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 54px;">
+        <div style="max-width: 640px;">
+          <div style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">Availability</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; line-height: 1.15; margin: 0 0 16px;">Check the dates before you ask</h2>
+          <p style="font-size: 17px; line-height: 1.8; color: #6B6058; margin: 0;">Confirmed bookings are shown below with their time slots. Pick a date that's open, or tap a booked one to see what's already held.</p>
+        </div>
+        <div style="display: flex; gap: 22px; flex-wrap: wrap; font-size: 13px; color: #6B6058;">
+          <div style="display: flex; align-items: center; gap: 9px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #7A2331;"></span>Fully booked</div>
+          <div style="display: flex; align-items: center; gap: 9px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #F0C9C0;"></span>Partly held</div>
+          <div style="display: flex; align-items: center; gap: 9px;"><span style="width: 11px; height: 11px; border-radius: 3px; background: #FAF7F2; border: 1px solid #d8cfc2;"></span>Open</div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: start;">
+        <div style="background: #FAF7F2; border: 1px solid #EAE3D8; border-radius: 24px; padding: 34px; box-shadow: 0 2px 10px rgba(28,23,18,0.04);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px;">
+            <button onClick="{{ prevMonth }}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #d8cfc2; background: none; cursor: pointer; font-size: 15px; color: #1C1712;" style-hover="background:#1C1712;color:#FAF7F2;">&larr;</button>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600;">{{ monthLabel }}</div>
+            <button onClick="{{ nextMonth }}" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid #d8cfc2; background: none; cursor: pointer; font-size: 15px; color: #1C1712;" style-hover="background:#1C1712;color:#FAF7F2;">&rarr;</button>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px;">
+            <sc-for list="{{ weekdays }}" as="w" hint-placeholder-count="7">
+              <div style="text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #9c9288; padding-bottom: 6px;">{{ w }}</div>
+            </sc-for>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px;">
+            <sc-for list="{{ cells }}" as="c" hint-placeholder-count="35">
+              <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.day }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6B6058; margin-bottom: 18px;">{{ panelTitle }}</div>
+          <sc-if value="{{ hasBookings }}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <sc-for list="{{ visibleBookings }}" as="b" hint-placeholder-count="3">
+                <div style="background: #FAF7F2; border: 1px solid #EAE3D8; border-left: 3px solid {{ b.accent }}; border-radius: 18px; padding: 22px 26px; display: grid; grid-template-columns: 68px 1fr auto; gap: 20px; align-items: center;">
+                  <div style="text-align: center;">
+                    <div style="font-family: 'Jost', sans-serif; font-weight: 500; font-size: 28px; line-height: 1;">{{ b.dayNum }}</div>
+                    <div style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #9c9288; margin-top: 5px;">{{ b.monthShort }}</div>
+                  </div>
+                  <div>
+                    <div style="font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 5px;">{{ b.event }}</div>
+                    <div style="font-size: 13px; color: #6B6058;">{{ b.city }}</div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div style="font-size: 13px; font-weight: 500;">{{ b.time }}</div>
+                    <div style="font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: {{ b.accent }}; margin-top: 5px;">{{ b.status }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noBookings }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #FAF7F2; border: 1px dashed #d8cfc2; border-radius: 18px; padding: 40px 30px; text-align: center;">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; margin-bottom: 10px;">This date is open</div>
+              <p style="font-size: 14px; color: #6B6058; line-height: 1.7; margin: 0 0 22px;">Nothing held on {{ selectedLabel }}. Send the details and Monica will confirm.</p>
+              <a href="#contact" style="display: inline-block; background: #7A2331; color: #FAF7F2; padding: 14px 30px; border-radius: 999px; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500;" style-hover="background:#5c1a25;">Request this date</a>
+            </div>
+          </sc-if>
+          <div style="margin-top: 26px; padding-top: 24px; border-top: 1px solid #EAE3D8; font-size: 13px; line-height: 1.7; color: #6B6058;">Dates shown are confirmed holds and update as bookings come in. Tentative enquiries are not listed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: 80px 40px 40px; max-width: 1340px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid #EAE3D8;">
+      <div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 25px; margin-bottom: 16px;">Monica Singh</div>
+        <p style="font-size: 14px; color: #6B6058; line-height: 1.7; max-width: 290px;">Wedding and corporate event anchoring across Ahmedabad and Gujarat.</p>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #1C1712; font-weight: 600; margin-bottom: 18px;">Explore</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="#collage" style="font-size: 14px; color: #6B6058;">About</a>
+          <a href="#action" style="font-size: 14px; color: #6B6058;">Showreel</a>
+          <a href="#gallery" style="font-size: 14px; color: #6B6058;">Gallery</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #1C1712; font-weight: 600; margin-bottom: 18px;">Services</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="Sangeet Hosting.dc.html" style="font-size: 14px; color: #6B6058;">Wedding Anchoring</a>
+          <a href="#services" style="font-size: 14px; color: #6B6058;">Corporate Events</a>
+          <a href="#services" style="font-size: 14px; color: #6B6058;">Special Occasions</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #1C1712; font-weight: 600; margin-bottom: 18px;">Contact</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="mailto:hello@monicasingh.com" style="font-size: 14px; color: #6B6058;">hello@monicasingh.com</a>
+          <a href="https://wa.me/910000000000" style="font-size: 14px; color: #6B6058;">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; padding-top: 24px; font-size: 13px; color: #6B6058;">
+      <div>Ahmedabad, Gujarat</div>
+      <div>&copy; 2026 Monica Singh</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/910000000000" style="{{ whatsappStyle }}" style-hover="background:#5c1a25;transform:translateY(-2px);">WhatsApp</a>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false, loaded: false, revealed: {}, statYears: 0, statEvents: 0, testimonialIndex: 0, menuOpen: false, calYear: 2026, calMonth: 7, selectedDate: null };
+
+  prevMonth = () => this.setState((s) => {
+    const m = s.calMonth - 1;
+    return m < 0 ? { calMonth: 11, calYear: s.calYear - 1, selectedDate: null } : { calMonth: m, selectedDate: null };
+  });
+
+  nextMonth = () => this.setState((s) => {
+    const m = s.calMonth + 1;
+    return m > 11 ? { calMonth: 0, calYear: s.calYear + 1, selectedDate: null } : { calMonth: m, selectedDate: null };
+  });
+
+  selectDate = (iso) => () => this.setState((s) => ({ selectedDate: s.selectedDate === iso ? null : iso }));
+
+  bookingPanel() {
+    const { calYear, calMonth, selectedDate } = this.state;
+    const prefix = `${calYear}-${String(calMonth + 1).padStart(2, '0')}`;
+    const list = selectedDate
+      ? this.bookings.filter((b) => b.date === selectedDate)
+      : this.bookings.filter((b) => b.date.startsWith(prefix));
+    const fmt = (iso) => {
+      const [y, m, d] = iso.split('-').map(Number);
+      return { dayNum: String(d), monthShort: this.monthNames[m - 1].slice(0, 3) };
+    };
+    const visible = list.map((b) => ({
+      ...b, ...fmt(b.date),
+      accent: b.status === 'Booked' ? '#7A2331' : '#c98a7d',
+    }));
+    let selectedLabel = '';
+    if (selectedDate) {
+      const [y, m, d] = selectedDate.split('-').map(Number);
+      selectedLabel = `${d} ${this.monthNames[m - 1]} ${y}`;
+    }
+    return {
+      visibleBookings: visible,
+      hasBookings: visible.length > 0,
+      noBookings: visible.length === 0,
+      selectedLabel: selectedLabel || 'this date',
+      panelTitle: selectedDate
+        ? selectedLabel
+        : `Booked in ${this.monthNames[calMonth]} ${calYear}`,
+    };
+  }
+
+  buildCells() {
+    const { calYear, calMonth, selectedDate } = this.state;
+    const first = new Date(calYear, calMonth, 1).getDay();
+    const days = new Date(calYear, calMonth + 1, 0).getDate();
+    const cells = [];
+    const base = {
+      border: 'none', borderRadius: '12px', cursor: 'default', fontFamily: "'Jost', sans-serif",
+      fontSize: '15px', fontWeight: 400, aspectRatio: '1 / 1', display: 'flex',
+      alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s ease', padding: 0,
+    };
+    for (let i = 0; i < first; i++) cells.push({ day: '', style: { ...base, background: 'transparent' }, onClick: null });
+    for (let d = 1; d <= days; d++) {
+      const iso = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      const b = this.bookings.find((x) => x.date === iso);
+      const sel = selectedDate === iso;
+      let style;
+      if (b && b.status === 'Booked') {
+        style = { ...base, background: '#7A2331', color: '#FAF7F2', cursor: 'pointer', fontWeight: 500 };
+      } else if (b) {
+        style = { ...base, background: '#F0C9C0', color: '#7A2331', cursor: 'pointer', fontWeight: 500 };
+      } else {
+        style = { ...base, background: '#FAF7F2', color: '#1C1712', border: '1px solid #EAE3D8', cursor: 'pointer' };
+      }
+      if (sel) style = { ...style, boxShadow: '0 0 0 2px #1C1712', transform: 'scale(1.06)' };
+      cells.push({ day: String(d), style, onClick: this.selectDate(iso) });
+    }
+    return cells;
+  }
+
+  serviceMenu = [
+    { label: 'Sangeet Hosting', href: 'Sangeet Hosting.dc.html' },
+    { label: 'Wedding Anchoring', href: 'Sangeet Hosting.dc.html' },
+    { label: 'Corporate Events', href: '#services' },
+    { label: 'Special Occasions', href: '#services' },
+  ];
+
+  openMenu = () => this.setState({ menuOpen: true });
+  closeMenu = () => this.setState({ menuOpen: false });
+
+  services = [
+    { num: '01', title: 'Wedding Anchoring', desc: 'Sangeet, haldi, mehendi and reception hosting with a rehearsed run-of-show and a live read of the room.', href: 'Sangeet Hosting.dc.html', img: 'assets/sangeet-green.jpg', alt: 'Monica hosting a wedding function', bg: '#EAE3D8', textColor: '#1C1712', descColor: '#6B6058', numColor: '#d8cfc2' },
+    { num: '02', title: 'Corporate Events', desc: 'Award functions, product launches and annual meets hosted with pace, polish and bilingual scripting.', href: '#contact', img: 'assets/epoxy-stage.jpg', alt: 'Monica hosting a corporate marketing meet', bg: '#7A2331', textColor: '#FAF7F2', descColor: '#F0C9C0', numColor: '#8f3644' },
+    { num: '03', title: 'Special Occasions', desc: 'Engagements, cricket leagues and milestone celebrations, scripted and hosted end to end.', href: '#contact', img: 'assets/kia-podium.jpg', alt: 'Monica at the podium for a milestone event', bg: '#EAE3D8', textColor: '#1C1712', descColor: '#6B6058', numColor: '#d8cfc2' },
+  ];
+
+  testimonials = [
+    { quote: 'Monica read the room perfectly all night. The sangeet never lost energy.', name: 'Priya Shah', event: 'Sangeet, Ahmedabad', avatar: 'assets/sangeet-green.jpg' },
+    { quote: 'Sharp, well-prepared, and completely bilingual on stage. Exactly what our launch needed.', name: 'Rohit Mehta', event: 'Product Launch, Vadodara', avatar: 'assets/kia-closeup.jpg' },
+    { quote: 'She handled a packed award night schedule without a single dead moment.', name: 'Anita Desai', event: 'Corporate Awards, Surat', avatar: 'assets/corporate-crowd.jpg' },
+  ];
+
+  bookings = [
+    { date: '2026-08-22', event: 'Sangeet — Shah Wedding', city: 'Ahmedabad', time: '7:00 PM – 12:00 AM', status: 'Booked' },
+    { date: '2026-08-23', event: 'Reception — Shah Wedding', city: 'Ahmedabad', time: '8:00 PM – 11:30 PM', status: 'Booked' },
+    { date: '2026-08-29', event: 'Dealership Launch', city: 'Vadodara', time: '11:00 AM – 2:00 PM', status: 'Partly held' },
+    { date: '2026-09-05', event: 'Annual Meet', city: 'Surat', time: '10:00 AM – 4:00 PM', status: 'Booked' },
+    { date: '2026-09-12', event: 'Haldi & Mehendi', city: 'Ahmedabad', time: '9:00 AM – 1:00 PM', status: 'Partly held' },
+    { date: '2026-09-19', event: 'Sangeet — Patel Wedding', city: 'Rajkot', time: '7:30 PM – 12:30 AM', status: 'Booked' },
+    { date: '2026-09-26', event: 'Award Night', city: 'Ahmedabad', time: '6:30 PM – 11:00 PM', status: 'Booked' },
+    { date: '2026-10-03', event: 'Engagement', city: 'Ahmedabad', time: '7:00 PM – 11:00 PM', status: 'Partly held' },
+    { date: '2026-10-10', event: 'Sangeet — Mehta Wedding', city: 'Ahmedabad', time: '7:00 PM – 1:00 AM', status: 'Booked' },
+    { date: '2026-10-17', event: 'Product Launch', city: 'Vadodara', time: '12:00 PM – 3:00 PM', status: 'Booked' },
+  ];
+
+  monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  clients = [
+    { name: 'KIA', kind: 'Dealership milestone' },
+    { name: 'CERA', kind: 'Brand event' },
+    { name: 'UPL', kind: 'Annual meet' },
+    { name: 'EPOXY HOUSE', kind: 'Marketing meet' },
+  ];
+
+  reelPoints = [
+    { num: '01', title: 'Crowd work that lands', desc: 'Reading the room in real time and pulling the energy back up when a segment runs long.' },
+    { num: '02', title: 'Cues, not guesses', desc: 'Every entry, performance and handover is rehearsed with the DJ and choreographer beforehand.' },
+    { num: '03', title: 'Three languages, one flow', desc: 'Switching between Hindi, English and Gujarati without breaking the pace of the evening.' },
+  ];
+
+  sectionRefs = {};
+  observers = [];
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll);
+    setTimeout(() => this.setState({ loaded: true }), 100);
+    this.animateStats();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    this.observers.forEach((o) => o.disconnect());
+  }
+
+  onScroll = () => {
+    const scrolled = window.scrollY > 80;
+    if (scrolled !== this.state.scrolled) this.setState({ scrolled });
+  };
+
+  animateStats() {
+    const duration = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / duration);
+      this.setState({ statYears: Math.round(10 * p), statEvents: Math.round(300 * p) });
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  prevTestimonial = () => this.setState((s) => ({ testimonialIndex: (s.testimonialIndex - 1 + this.testimonials.length) % this.testimonials.length }));
+  nextTestimonial = () => this.setState((s) => ({ testimonialIndex: (s.testimonialIndex + 1) % this.testimonials.length }));
+
+  observeSection = (key) => (el) => {
+    this.sectionRefs[key] = el;
+    if (!el || el.__revObserved) return;
+    el.__revObserved = true;
+    if (typeof IntersectionObserver === 'undefined') {
+      this.setState((s) => ({ revealed: { ...s.revealed, [key]: true } }));
+      return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        this.setState((s) => ({ revealed: { ...s.revealed, [key]: true } }));
+        if (key === 'stats') this.animateStats();
+        obs.disconnect();
+      }
+    }, { threshold: 0.15 });
+    obs.observe(el);
+    this.observers.push(obs);
+  };
+
+  reveal(key) {
+    // Visible by default; the fade is progressive enhancement only.
+    const pending = this.state.revealed[key] === false;
+    return {
+      opacity: pending ? 0 : 1,
+      transform: pending ? 'translateY(24px)' : 'translateY(0)',
+      transition: 'opacity 0.7s ease, transform 0.7s ease',
+    };
+  }
+
+  renderVals() {
+    return {
+      headerStyle: {
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 40,
+        background: this.state.scrolled ? 'rgba(250,247,242,0.9)' : 'transparent',
+        backdropFilter: this.state.scrolled ? 'blur(10px)' : 'none',
+        borderBottom: this.state.scrolled ? '1px solid #EAE3D8' : '1px solid transparent',
+        transition: 'all 0.4s ease',
+      },
+      navLinkStyle: { fontSize: '13px', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: 500, color: '#1C1712' },
+      heroTextStyle: {
+        opacity: this.state.loaded ? 1 : 0,
+        transform: this.state.loaded ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.9s ease, transform 0.9s ease',
+      },
+      statsRef: this.observeSection('stats'),
+      pressRef: this.observeSection('press'),
+      collageRef: this.observeSection('collage'),
+      servicesRef: this.observeSection('services'),
+      testimonialsRef: this.observeSection('testimonials'),
+      ctaRef: this.observeSection('cta'),
+      statsSectionStyle: this.reveal('stats'),
+      pressSectionStyle: { ...this.reveal('press'), position: 'relative', overflow: 'hidden', background: '#FAF7F2' },
+      collageSectionStyle: this.reveal('collage'),
+      servicesSectionStyle: this.reveal('services'),
+      testimonialsSectionStyle: { ...this.reveal('testimonials'), background: '#EAE3D8' },
+      ctaSectionStyle: { ...this.reveal('cta'), background: '#7A2331', position: 'relative', overflow: 'hidden' },
+      statYears: this.state.statYears,
+      statEvents: this.state.statEvents,
+      statLanguages: 3,
+      services: this.services,
+      testimonials: this.testimonials,
+      reelPoints: this.reelPoints,
+      clients: this.clients,
+      calendarRef: this.observeSection('calendar'),
+      calendarSectionStyle: { ...this.reveal('calendar'), background: '#EFE9DE' },
+      weekdays: this.weekdays,
+      cells: this.buildCells(),
+      monthLabel: `${this.monthNames[this.state.calMonth]} ${this.state.calYear}`,
+      prevMonth: this.prevMonth,
+      nextMonth: this.nextMonth,
+      ...this.bookingPanel(),
+      serviceMenu: this.serviceMenu,
+      openMenu: this.openMenu,
+      closeMenu: this.closeMenu,
+      caretStyle: {
+        fontSize: '9px',
+        display: 'inline-block',
+        transform: this.state.menuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        transition: 'transform 0.25s ease',
+      },
+      dropdownStyle: {
+        position: 'absolute', top: '100%', left: '-14px', paddingTop: '14px', minWidth: '220px',
+        opacity: this.state.menuOpen ? 1 : 0,
+        visibility: this.state.menuOpen ? 'visible' : 'hidden',
+        transform: this.state.menuOpen ? 'translateY(0)' : 'translateY(-6px)',
+        transition: 'opacity 0.25s ease, transform 0.25s ease, visibility 0.25s',
+        background: 'transparent',
+      },
+      whatsappStyle: {
+        position: 'fixed', bottom: '28px', right: '28px', background: '#7A2331', color: '#FAF7F2',
+        padding: '15px 26px', borderRadius: '999px', fontSize: '13px', letterSpacing: '0.5px',
+        textTransform: 'uppercase', fontWeight: 600, boxShadow: '0 12px 30px rgba(122,35,49,0.35)', zIndex: 50,
+        opacity: this.state.scrolled ? 1 : 0,
+        pointerEvents: this.state.scrolled ? 'auto' : 'none',
+        transition: 'opacity 0.4s ease',
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
