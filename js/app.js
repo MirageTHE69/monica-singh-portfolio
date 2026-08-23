@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendar();
   initFaqAccordion();
   initScrollEffects();
+  initGalleryPage();
 });
 
 /* ==========================================================================
@@ -318,5 +319,123 @@ function initFaqAccordion() {
         item.classList.add('active');
       }
     });
+  });
+}
+
+/* ==========================================================================
+   6. Gallery Page — Category Filtering + Lightbox
+   ========================================================================== */
+function initGalleryPage() {
+  const grid = document.getElementById('gallery-full-grid');
+  if (!grid) return;
+
+  const items = Array.from(grid.querySelectorAll('.gallery-full-item'));
+  const pills = Array.from(document.querySelectorAll('.filter-pill'));
+  const emptyState = document.getElementById('gallery-empty-state');
+  const totalStatEl = document.getElementById('gallery-stat-total');
+
+  const lightbox = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  let visibleItems = items;
+  let currentIndex = 0;
+
+  if (totalStatEl) totalStatEl.textContent = items.length;
+
+  // Populate each pill with a live count badge, e.g. "Corporate (4)"
+  pills.forEach(pill => {
+    const filter = pill.dataset.filter;
+    const count = filter === 'all' ? items.length : items.filter(i => i.dataset.category === filter).length;
+    const countEl = document.createElement('span');
+    countEl.className = 'filter-count';
+    countEl.textContent = count;
+    pill.appendChild(countEl);
+  });
+
+  function applyFilter(filter, updateUrl) {
+    let matched = 0;
+    items.forEach(item => {
+      const show = filter === 'all' || item.dataset.category === filter;
+      item.classList.toggle('hidden-item', !show);
+      if (show) matched++;
+    });
+
+    visibleItems = items.filter(item => !item.classList.contains('hidden-item'));
+
+    pills.forEach(pill => {
+      pill.classList.toggle('active', pill.dataset.filter === filter);
+    });
+
+    if (emptyState) {
+      emptyState.classList.toggle('visible', matched === 0);
+    }
+
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (filter === 'all') {
+        url.searchParams.delete('filter');
+      } else {
+        url.searchParams.set('filter', filter);
+      }
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => applyFilter(pill.dataset.filter, true));
+  });
+
+  const initialFilter = new URLSearchParams(window.location.search).get('filter') || 'all';
+  const validFilters = pills.map(p => p.dataset.filter);
+  applyFilter(validFilters.includes(initialFilter) ? initialFilter : 'all', false);
+
+  function openLightbox(item) {
+    if (!lightbox || !lightboxImg) return;
+    currentIndex = visibleItems.indexOf(item);
+    const img = item.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    if (lightboxCaption) lightboxCaption.textContent = item.dataset.caption || img.alt;
+    if (lightboxCounter) lightboxCounter.textContent = `${currentIndex + 1} / ${visibleItems.length}`;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function showByOffset(offset) {
+    if (!visibleItems.length) return;
+    currentIndex = (currentIndex + offset + visibleItems.length) % visibleItems.length;
+    openLightbox(visibleItems[currentIndex]);
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => openLightbox(item));
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', () => showByOffset(-1));
+  if (lightboxNext) lightboxNext.addEventListener('click', () => showByOffset(1));
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showByOffset(-1);
+    if (e.key === 'ArrowRight') showByOffset(1);
   });
 }
