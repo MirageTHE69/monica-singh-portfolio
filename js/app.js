@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileMenu();
   initStatsCounter();
-  initCalendar();
   initFaqAccordion();
   initScrollEffects();
   initGalleryPage();
@@ -106,7 +105,7 @@ function initStatsCounter() {
     const duration = 1400;
     const start = performance.now();
     const targetYears = 10;
-    const targetEvents = 300;
+    const targetEvents = 1500;
 
     const tick = (now) => {
       const p = Math.min(1, (now - start) / duration);
@@ -133,177 +132,6 @@ function initStatsCounter() {
   } else {
     runCounter();
   }
-}
-
-/* ==========================================================================
-   4. Live Interactive Availability Calendar
-   ========================================================================== */
-function initCalendar() {
-  const calContainer = document.getElementById('availability-calendar');
-  if (!calContainer) return;
-
-  const bookingsData = [
-    { date: '2026-08-22', event: 'Sangeet — Shah Wedding', city: 'Ahmedabad', time: '7:00 PM – 12:00 AM', status: 'Booked' },
-    { date: '2026-08-23', event: 'Reception — Shah Wedding', city: 'Ahmedabad', time: '8:00 PM – 11:30 PM', status: 'Booked' },
-    { date: '2026-08-29', event: 'Dealership Launch', city: 'Vadodara', time: '11:00 AM – 2:00 PM', status: 'Partly held' },
-    { date: '2026-09-05', event: 'Annual Meet', city: 'Surat', time: '10:00 AM – 4:00 PM', status: 'Booked' },
-    { date: '2026-09-12', event: 'Haldi & Mehendi', city: 'Ahmedabad', time: '9:00 AM – 1:00 PM', status: 'Partly held' },
-    { date: '2026-09-19', event: 'Sangeet — Patel Wedding', city: 'Rajkot', time: '7:30 PM – 12:30 AM', status: 'Booked' },
-    { date: '2026-09-26', event: 'Award Night', city: 'Ahmedabad', time: '6:30 PM – 11:00 PM', status: 'Booked' },
-    { date: '2026-10-03', event: 'Engagement', city: 'Ahmedabad', time: '7:00 PM – 11:00 PM', status: 'Partly held' },
-    { date: '2026-10-10', event: 'Sangeet — Mehta Wedding', city: 'Ahmedabad', time: '7:00 PM – 1:00 AM', status: 'Booked' },
-    { date: '2026-10-17', event: 'Product Launch', city: 'Vadodara', time: '12:00 PM – 3:00 PM', status: 'Booked' },
-  ];
-
-  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-  let calYear = 2026;
-  let calMonth = 7; // August (0-indexed: 7)
-  let selectedDate = null;
-
-  const monthTitleEl = document.getElementById('cal-month-title');
-  const daysGridEl = document.getElementById('cal-days-grid');
-  const prevBtn = document.getElementById('cal-prev-btn');
-  const nextBtn = document.getElementById('cal-next-btn');
-  const panelTitleEl = document.getElementById('cal-panel-title');
-  const panelContentEl = document.getElementById('cal-panel-content');
-
-  function renderCalendar() {
-    if (!daysGridEl || !monthTitleEl) return;
-
-    monthTitleEl.textContent = `${monthNames[calMonth]} ${calYear}`;
-
-    const firstDay = new Date(calYear, calMonth, 1).getDay();
-    const totalDays = new Date(calYear, calMonth + 1, 0).getDate();
-
-    daysGridEl.innerHTML = '';
-
-    // Empty cells before month start
-    for (let i = 0; i < firstDay; i++) {
-      const emptyDiv = document.createElement('div');
-      emptyDiv.className = 'cal-cell cal-cell-empty';
-      daysGridEl.appendChild(emptyDiv);
-    }
-
-    // Days of month
-    for (let d = 1; d <= totalDays; d++) {
-      const iso = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-      const booking = bookingsData.find(b => b.date === iso);
-      const isSelected = selectedDate === iso;
-
-      const cell = document.createElement('button');
-      cell.className = 'cal-cell';
-      cell.textContent = String(d);
-      cell.setAttribute('aria-label', `${d} ${monthNames[calMonth]} ${calYear}`);
-
-      if (booking) {
-        if (booking.status === 'Booked') {
-          cell.classList.add('cal-cell-booked');
-        } else {
-          cell.classList.add('cal-cell-partly');
-        }
-      } else {
-        cell.classList.add('cal-cell-open');
-      }
-
-      if (isSelected) {
-        cell.classList.add('cal-cell-selected');
-      }
-
-      cell.addEventListener('click', () => {
-        selectedDate = selectedDate === iso ? null : iso;
-        renderCalendar();
-        renderPanel();
-      });
-
-      daysGridEl.appendChild(cell);
-    }
-  }
-
-  function renderPanel() {
-    if (!panelTitleEl || !panelContentEl) return;
-
-    const prefix = `${calYear}-${String(calMonth + 1).padStart(2, '0')}`;
-    let visibleList = [];
-    let selectedLabel = '';
-
-    if (selectedDate) {
-      const [y, m, d] = selectedDate.split('-').map(Number);
-      selectedLabel = `${d} ${monthNames[m - 1]} ${y}`;
-      visibleList = bookingsData.filter(b => b.date === selectedDate);
-      panelTitleEl.textContent = selectedLabel;
-    } else {
-      visibleList = bookingsData.filter(b => b.date.startsWith(prefix));
-      panelTitleEl.textContent = `Booked in ${monthNames[calMonth]} ${calYear}`;
-    }
-
-    if (visibleList.length > 0) {
-      let html = '<div class="booking-list">';
-      visibleList.forEach(b => {
-        const [, m, d] = b.date.split('-').map(Number);
-        const monthShort = monthNames[m - 1].slice(0, 3);
-        const isBooked = b.status === 'Booked';
-        const accentColor = isBooked ? '#7A2331' : '#c98a7d';
-
-        html += `
-          <div class="booking-item-card" style="border-left: 3px solid ${accentColor};">
-            <div class="booking-date-badge">
-              <div class="booking-day-num">${d}</div>
-              <div class="booking-month-name">${monthShort}</div>
-            </div>
-            <div>
-              <div class="booking-event-title">${b.event}</div>
-              <div class="booking-event-city">${b.city}</div>
-            </div>
-            <div style="text-align: right;">
-              <div class="booking-event-time">${b.time}</div>
-              <div class="booking-event-status" style="color: ${accentColor};">${b.status}</div>
-            </div>
-          </div>
-        `;
-      });
-      html += '</div>';
-      panelContentEl.innerHTML = html;
-    } else {
-      const openDateLabel = selectedLabel || 'this date';
-      panelContentEl.innerHTML = `
-        <div class="booking-empty-box">
-          <div class="booking-empty-title">This date is open</div>
-          <p class="booking-empty-desc">Nothing held on ${openDateLabel}. Send the details and Monica will confirm.</p>
-          <a href="#contact" class="btn-primary" style="padding: 14px 30px; font-size: 13px;">Request this date</a>
-        </div>
-      `;
-    }
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      calMonth--;
-      if (calMonth < 0) {
-        calMonth = 11;
-        calYear--;
-      }
-      selectedDate = null;
-      renderCalendar();
-      renderPanel();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      calMonth++;
-      if (calMonth > 11) {
-        calMonth = 0;
-        calYear++;
-      }
-      selectedDate = null;
-      renderCalendar();
-      renderPanel();
-    });
-  }
-
-  renderCalendar();
-  renderPanel();
 }
 
 /* ==========================================================================
