@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollEffects();
   initGalleryPage();
+  initReelsAutoplay();
 });
 
 /* ==========================================================================
@@ -266,4 +267,31 @@ function initGalleryPage() {
     if (e.key === 'ArrowLeft') showByOffset(-1);
     if (e.key === 'ArrowRight') showByOffset(1);
   });
+}
+
+/* ==========================================================================
+   7. Reels Strip — Lazy Load + Autoplay In View
+   ========================================================================== */
+function initReelsAutoplay() {
+  const videos = Array.from(document.querySelectorAll('.reel-card-video'));
+  if (!videos.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach(v => { v.src = v.dataset.src; });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        if (!video.src) video.src = video.dataset.src;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.6 });
+
+  videos.forEach(v => observer.observe(v));
 }

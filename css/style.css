@@ -1210,6 +1210,114 @@ img, video {
 }
 
 /* ==========================================================================
+   Reels Section
+   ========================================================================== */
+.reels-section {
+  background: var(--color-bg-card-alt);
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.reels-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 6px 22px;
+  margin: 56px -6px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-subtle) transparent;
+}
+
+.reels-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reels-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.reels-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: var(--radius-full);
+}
+
+.reel-card {
+  position: relative;
+  flex: 0 0 235px;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-lg);
+  scroll-snap-align: start;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.reel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.reel-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #14100c;
+}
+
+.reel-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+}
+
+.reel-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(28, 23, 18, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.reel-card-link {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.reel-card:hover .reel-card-link,
+.reel-card:focus-visible .reel-card-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 560px) {
+  .reel-card {
+    flex-basis: 62vw;
+  }
+}
+
+/* ==========================================================================
    Testimonials Section
    ========================================================================== */
 .testimonials-section {
