@@ -851,6 +851,144 @@ img, video {
   color: #7f766d;
 }
 
+/* Logo Wall (homepage "Trusted by" + dedicated Brands page) */
+.brand-wall-card {
+  background: var(--color-dark);
+  border-radius: var(--radius-xl);
+  padding: 64px 48px;
+  box-shadow: var(--shadow-lg);
+}
+
+.brand-logo-wall {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.brand-logo-chip {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand-logo-chip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+.brand-logo-chip img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.brand-logo-chip-text {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--color-dark);
+}
+
+.brand-wall-more {
+  text-align: center;
+  margin-top: 44px;
+}
+
+/* Full Brands Page grid: light card variant with name + kind under each logo */
+.brand-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.brand-page-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.brand-page-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-subtle);
+}
+
+.brand-page-logo-wrap {
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-page-logo-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.brand-page-logo-wrap.no-logo {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+.brand-page-name {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--color-text-main);
+}
+
+.brand-page-kind {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 1080px) {
+  .brand-logo-wall {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .brand-page-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-wall-card {
+    padding: 44px 22px;
+  }
+
+  .brand-logo-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* ==========================================================================
    About / Collage Section
    ========================================================================== */
